@@ -1,0 +1,85 @@
+// Стани форм заявок: помилки, відправка, «Дякуємо»
+.form {
+	// Червона рамка на незаповнених полях — лише після спроби відправити
+	&--validated {
+		.form__general:invalid,
+		.form__checkbox:invalid {
+			outline: 2px solid $color-error;
+			outline-offset: 1px;
+		}
+	}
+
+	&--sending [type="submit"] {
+		opacity: .7;
+		cursor: progress;
+	}
+
+	&__error {
+		max-width: 323px;
+		margin: -10px 0 15px;
+		text-align: center;
+		color: $color-error;
+		font-size: 13px;
+		line-height: 1.4;
+	}
+
+	// Після відправки лишається тільки блок «Дякуємо»
+	&--sent > :not(.form__success) {
+		display: none;
+	}
+
+	&__success {
+		flex-direction: column;
+		align-items: center;
+		gap: 12px;
+		max-width: 340px;
+		padding: 50px 20px;
+		text-align: center;
+
+		&:not([hidden]) {
+			display: flex;
+		}
+	}
+
+	&__success-icon {
+		width: 64px;
+		height: 64px;
+		margin-bottom: 8px;
+		border-radius: 50%;
+		background: $color-accent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 34px no-repeat;
+	}
+
+	&__success-title {
+		color: $color-primary;
+		font-size: 22px;
+		font-weight: 700;
+
+		// Фокус ставимо програмно для скрінрідерів — рамка тут не потрібна
+		&:focus {
+			outline: none;
+		}
+	}
+
+	&__success-text {
+		color: $color-black;
+		font-size: 15px;
+		line-height: 1.4;
+	}
+
+	&__success-btn {
+		margin-top: 12px;
+		color: $color-link;
+		font-size: 14px;
+		font-weight: 500;
+		text-decoration: underline;
+
+		&:hover {
+			color: $color-accent;
+		}
+
+		&:focus-visible {
+			outline: 2px solid $color-accent;
+			outline-offset: 2px;
+		}
+	}
+}

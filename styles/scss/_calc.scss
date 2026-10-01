@@ -1,0 +1,431 @@
+// Калькулятор вартості (відкривається в .modal)
+
+$glass: linear-gradient(135deg, #eef3f9, #cfdcec);
+
+// Лінії відкривання стулки (SVG розтягується на всю стулку)
+@function sash-lines($path) {
+	@return url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='#{$path}' fill='none' stroke='%233B3A63' stroke-width='1' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+}
+.calc {
+	color: $color-black;
+
+	&__head {
+		margin-bottom: 30px;
+		padding-right: 30px;
+	}
+
+	&__title {
+		color: $color-primary;
+		font-size: 24px;
+		font-weight: 700;
+	}
+
+	&__subtitle {
+		margin-top: 10px;
+		font-size: 14px;
+		line-height: 1.4;
+	}
+
+	&__body {
+		display: grid;
+		grid-template-columns: 1fr 320px;
+		gap: 40px;
+		align-items: start;
+	}
+
+	&__fields {
+		display: flex;
+		flex-direction: column;
+		gap: 22px;
+	}
+
+	&__label {
+		margin-bottom: 10px;
+		color: $color-primary;
+		font-size: 14px;
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+
+	// Кнопки-перемикачі в стилі вкладок сайту
+	&__options {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px;
+	}
+
+	&__option {
+		input {
+			position: absolute;
+			opacity: 0;
+			pointer-events: none;
+		}
+
+		span {
+			display: block;
+			padding: 10px 16px;
+			border-radius: 3px;
+			background: $color-bg;
+			color: $color-primary;
+			font-size: 15px;
+			font-weight: 500;
+			cursor: pointer;
+			transition: background .3s, color .3s;
+		}
+
+		span:hover {
+			background: $color-bg-hover;
+		}
+
+		input:checked + span {
+			background: $color-accent;
+			color: $color-white;
+		}
+
+		input:focus-visible + span {
+			outline: 2px solid $color-primary;
+			outline-offset: 2px;
+		}
+	}
+
+	&__sizes {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 20px;
+	}
+
+	&__size {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+	}
+
+	&__size-label {
+		font-size: 13px;
+		color: $color-input-text;
+	}
+
+	&__input {
+		width: 100%;
+		height: 40px;
+		padding: 0 12px;
+		border-radius: 3px;
+		background: $color-input-bg;
+		color: $color-input-text;
+		font-size: 15px;
+
+		&:focus-visible {
+			outline: 2px solid $color-accent;
+		}
+	}
+
+	&__range {
+		width: 100%;
+		accent-color: $color-accent;
+		cursor: pointer;
+	}
+
+	&__extras {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+		gap: 10px 20px;
+	}
+
+	&__check {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		font-size: 15px;
+		cursor: pointer;
+
+		input {
+			position: absolute;
+			opacity: 0;
+			pointer-events: none;
+		}
+
+		span::before {
+			content: '';
+			display: inline-block;
+			width: 18px;
+			height: 18px;
+			margin-right: 10px;
+			vertical-align: -4px;
+			border: 2px solid $color-primary-light;
+			border-radius: 3px;
+			transition: background .2s, border-color .2s;
+		}
+
+		input:checked + span::before {
+			border-color: $color-accent;
+			background: $color-accent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 10'%3E%3Cpath d='M1 5l3.5 3.5L11 1.5' fill='none' stroke='white' stroke-width='2'/%3E%3C/svg%3E") center / 11px no-repeat;
+		}
+
+		input:focus-visible + span::before {
+			outline: 2px solid $color-primary;
+			outline-offset: 2px;
+		}
+	}
+
+	&__counter {
+		display: flex;
+		width: max-content;
+	}
+
+	&__counter-btn {
+		width: 40px;
+		height: 40px;
+		background: $color-primary-light;
+		color: $color-white;
+		font-size: 20px;
+		transition: background .3s;
+
+		&:first-child {
+			border-radius: 3px 0 0 3px;
+		}
+
+		&:last-child {
+			border-radius: 0 3px 3px 0;
+		}
+
+		&:hover {
+			background: $color-primary-hover;
+		}
+	}
+
+	&__counter-value {
+		width: 60px;
+		border-radius: 0;
+		text-align: center;
+		-moz-appearance: textfield;
+
+		&::-webkit-inner-spin-button,
+		&::-webkit-outer-spin-button {
+			-webkit-appearance: none;
+		}
+	}
+
+	// Права колонка з підсумком лишається на екрані, поки прокручуєш поля
+	&__summary {
+		position: sticky;
+		top: 0;
+		padding: 20px;
+		border-radius: 5px;
+		background: $color-bg;
+	}
+
+	&__preview {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		aspect-ratio: 4 / 3; // тримай синхронно з PREVIEW_RATIO у calculator.js
+		padding: 10px;
+	}
+
+	&__frame {
+		display: flex;
+		gap: 4px;
+		padding: 4px;
+		border-radius: 2px;
+		background: $color-primary;
+		transition: width .3s, height .3s;
+	}
+
+	// Позначення як на кресленнях: лінії сходяться до петель.
+	// «>» або «<» — поворотне відкривання, «V» — відкидне (петлі знизу)
+	&__sash {
+		flex: 1;
+		position: relative;
+		background: $glass;
+
+		&--hinge-left {
+			background: sash-lines('M100 0L0 50L100 100M0 0L50 100L100 0'), $glass;
+		}
+
+		&--hinge-right {
+			background: sash-lines('M0 0L100 50L0 100M0 0L50 100L100 0'), $glass;
+		}
+
+		// Ручка — з протилежного від петель боку
+		&--open::after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			width: 3px;
+			height: 16%;
+			min-height: 8px;
+			border-radius: 2px;
+			background: $color-primary;
+			transform: translateY(-50%);
+		}
+
+		&--hinge-left::after {
+			right: 6%;
+		}
+
+		&--hinge-right::after {
+			left: 6%;
+		}
+	}
+
+	&__legend {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 6px 16px;
+		margin: -8px 0 15px;
+		color: $color-input-text;
+		font-size: 12px;
+	}
+
+	&__legend-item {
+		display: flex;
+		align-items: center;
+		gap: 6px;
+	}
+
+	&__legend-icon {
+		flex: none;
+		width: 16px;
+		height: 20px;
+		outline: 2px solid $color-primary;
+
+		&::after {
+			min-height: 5px;
+			width: 2px;
+		}
+	}
+
+	&__hint {
+		margin-top: 10px;
+		padding: 10px 12px;
+		border-left: 3px solid $color-accent;
+		border-radius: 0 3px 3px 0;
+		background: $color-hint-bg;
+		font-size: 13px;
+		line-height: 1.4;
+	}
+
+	&__hint-btn {
+		color: $color-accent;
+		font-weight: 700;
+		text-decoration: underline;
+
+		&:hover {
+			color: $color-accent-hover;
+		}
+
+		&:focus-visible {
+			outline: 2px solid $color-primary;
+			outline-offset: 2px;
+		}
+	}
+
+	&__preview-size {
+		margin-bottom: 15px;
+		text-align: center;
+		color: $color-input-text;
+		font-size: 13px;
+	}
+
+	&__breakdown {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+		font-size: 13px;
+	}
+
+	&__breakdown-item {
+		display: flex;
+		justify-content: space-between;
+		gap: 10px;
+		padding-bottom: 6px;
+		border-bottom: 1px dotted $color-gray;
+
+		span:last-child {
+			white-space: nowrap;
+			font-weight: 500;
+		}
+
+		&--count {
+			color: $color-input-text;
+		}
+	}
+
+	&__total {
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+		margin: 20px 0;
+		color: $color-primary;
+		font-size: 14px;
+	}
+
+	&__total-value {
+		color: $color-accent;
+		font-size: 30px;
+		font-weight: 700;
+	}
+
+	&__button-orange {
+		width: 100%;
+		height: 50px;
+		position: relative;
+		background: $color-accent;
+		color: $color-white;
+		font-size: 15px;
+		font-weight: 700;
+
+		&::before {
+			content: "";
+			position: absolute;
+			background: url("../../img/icon/btn-orange.svg") 0 0/cover no-repeat;
+			width: 20px;
+			height: 18px;
+			top: 16px;
+			left: 20px;
+		}
+
+		&:hover {
+			background: $color-accent-hover;
+			box-shadow: 3px 5px 5px $color-accent-shadow;
+		}
+	}
+
+	&__note {
+		margin-top: 12px;
+		text-align: center;
+		color: $color-gray;
+		font-size: 12px;
+	}
+
+	@media (max-width: 900px) {
+		&__body {
+			grid-template-columns: 1fr;
+		}
+
+		&__summary {
+			position: static;
+		}
+
+		&__preview {
+			max-width: 280px;
+			margin: 0 auto;
+		}
+	}
+
+	@media (max-width: 480px) {
+		&__title {
+			font-size: 20px;
+		}
+
+		&__option span {
+			padding: 9px 12px;
+			font-size: 14px;
+		}
+
+		&__sizes {
+			gap: 12px;
+		}
+	}
+}

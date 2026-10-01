@@ -1,0 +1,71 @@
+// Ефекти прокрутки (js/scroll-effects.js)
+
+// Поява блоків: класи додає і знімає JS, без JS усе видно одразу
+.reveal {
+	opacity: 0;
+	transform: translateY(30px);
+	transition: opacity .6s ease, transform .6s ease;
+
+	&--visible {
+		opacity: 1;
+		transform: none;
+	}
+
+	// На друк потрапляє вся сторінка, навіть блоки, до яких ще не докрутили
+	@media print {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+// Кнопка «Нагору»
+.to-top {
+	position: fixed;
+	right: 25px;
+	bottom: 25px;
+	z-index: 40; // нижче шапки (50) і модалок (100)
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background: $color-accent;
+	color: $color-white;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(15px);
+	transition: opacity .3s, visibility .3s, transform .3s, background-color .3s;
+
+	&--visible {
+		opacity: 1;
+		visibility: visible;
+		transform: none;
+	}
+
+	&:hover {
+		background: $color-accent-hover;
+	}
+
+	&:focus-visible {
+		outline: 2px solid $color-primary;
+		outline-offset: 3px;
+	}
+
+	svg {
+		width: 22px;
+		height: 22px;
+	}
+
+	@media print {
+		display: none;
+	}
+
+	@media (max-width: 480px) {
+		right: 15px;
+		bottom: 15px;
+		width: 44px;
+		height: 44px;
+	}
+}

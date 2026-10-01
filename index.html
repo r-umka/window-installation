@@ -1,1122 +1,1419 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Мовні версії сторінки. Коли буде домен, заміни на повні адреси: https://домен/ і https://домен/?lang=en -->
+    <link rel="alternate" hreflang="uk" href="./" />
+    <link rel="alternate" hreflang="en" href="./?lang=en" />
+    <link rel="alternate" hreflang="x-default" href="./" />
+    <link rel="stylesheet" href="./styles/css/style.css" />
+    <title data-i18n>Вікна Хаус — пластикові вікна та скління балконів</title>
+    <meta
+      data-i18n-attr="content"
+      name="description"
+      content="Виготовлення та встановлення пластикових вікон Rehau, скління балконів, котеджів і комерційних об'єктів. Безкоштовний замір."
+    />
+    <script src="./js/translations.js" defer></script>
+    <script src="./js/i18n.js" defer></script>
+    <script src="./js/tabs.js" defer></script>
+    <script src="./js/accordion.js" defer></script>
+    <script src="./js/header.js" defer></script>
+    <script src="./js/model.js" defer></script>
+    <script src="./js/calculator.js" defer></script>
+    <script src="./js/forms.js" defer></script>
+    <script src="./js/video.js" defer></script>
+    <script src="./js/scroll-effects.js" defer></script>
+  </head>
 
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
-	<link rel="stylesheet" href="./styles/css/style.css">
-	<title>window house</title>
-	<script src="./js/tabu.js" defer></script>
-	<script src="./js/acardion.js" defer></script>
-	<script src="./js/menuBurger.js" defer></script>
-	<script src="./js/model.js" defer></script>
-</head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="container">
+          <div class="header__content">
+            <div class="header__logo">
+              <a href="#"><img data-i18n-attr="alt" src="img/icon/logo.svg" alt="Вікна Хаус" /></a>
+            </div>
+            <nav class="header__menu">
+              <button class="header__menu-btn" type="button" aria-label="Меню" data-i18n-attr="aria-label" aria-expanded="false" aria-controls="header-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
+              <ul class="header__list" id="header-menu">
+                <li class="header__item"><a data-i18n href="#services">Послуги</a></li>
+                <li class="header__item"><a data-i18n href="#products">Виробництво</a></li>
+                <li class="header__item"><a data-i18n href="#company">Про компанію</a></li>
+                <li class="header__item"><a data-i18n href="#portfolio">Портфоліо</a></li>
+                <li class="header__item"><a data-i18n href="#question">Питання та відповіді</a></li>
+                <li class="header__item"><a data-i18n href="#contacts">Контакти</a></li>
+              </ul>
+            </nav>
+            <div class="lang" role="group" aria-label="Мова сайту / Language">
+              <button class="lang__btn" type="button" data-lang="uk" aria-pressed="true" lang="uk">UA</button>
+              <button class="lang__btn" type="button" data-lang="en" aria-pressed="false" lang="en">EN</button>
+            </div>
+            <div class="header__order">
+              <button data-i18n class="header__button-orange btn" type="button" data-modal="modal-order">Заявка на замір</button>
+              <button data-i18n class="header__button-blue btn" type="button" data-modal="modal-calc">
+                Розрахувати вартість
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main class="main">
+        <section class="ful-skrin">
+          <div class="container">
+            <div class="ful-skrin__content">
+              <div class="ful-skrin__info">
+                <div class="ful-skrin__title">
+                  <h1 data-i18n>
+                    <span>Вікна Хаус —</span> <br />
+                    Професійний підхід до скління
+                  </h1>
+                </div>
+                <div class="ful-skrin__servic">
+                  <div class="ful-skrin__block">
+                    <img src="img/icon/ocna-1.svg" alt="" />
+                    <p data-i18n>Сучасні вікна та балконні конструкції за доступними цінами</p>
+                  </div>
+                  <div class="ful-skrin__block">
+                    <img src="img/icon/ocna-2.svg" alt="" />
+                    <p data-i18n>Кваліфіковано вирішуємо завдання будь-якої складності</p>
+                  </div>
+                  <div class="ful-skrin__block">
+                    <img src="img/icon/ocna-3.svg" alt="" />
+                    <p data-i18n>Гарантія найвищої якості нашої продукції</p>
+                  </div>
+                </div>
+              </div>
+              <div class="ful-skrin__request">
+                <form action="#" method="post" class="ful-skrin__form form" novalidate>
+                  <label data-i18n for="name" class="form__title">Викличте замірника додому</label>
+                  <input
+                    data-i18n-attr="placeholder"
+                    type="text"
+                    name="name"
+                    id="name"
+                    autocomplete="name"
+                    placeholder="Представтеся, будь ласка"
+                    class="form__name form__general"
+                    required
+                  />
+                  <input
+                    data-i18n-attr="placeholder"
+                    type="tel"
+                    name="tel"
+                    id="tel"
+                    inputmode="tel"
+                    autocomplete="tel"
+                    placeholder="Номер телефону"
+                    class="form__tel form__general"
+                    required
+                  />
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    autocomplete="email"
+                    placeholder="E-mail"
+                    class="form__email form__general"
+                  />
+                  <div class="form__box">
+                    <input type="checkbox" name="consent" id="consent" class="form__checkbox" required /><label
+                      data-i18n
+                      for="consent"
+                      class="form__chec-title"
+                      >Я погоджуюся на обробку персональних даних відповідно до <a href="#">Політики конфіденційності</a></label
+                    >
+                  </div>
+                  <p class="form__error" role="alert" data-form-error hidden data-i18n>
+                    Не вдалося надіслати. Спробуйте ще раз або зателефонуйте нам.
+                  </p>
+                  <div class="form__box-btn">
+                    <button data-i18n class="form__button-orange btn" type="submit">Заявка на замір</button>
+                  </div>
+                  <div class="form__success" data-form-success hidden>
+                    <div class="form__success-icon" aria-hidden="true"></div>
+                    <p class="form__success-title" tabindex="-1" data-i18n>Дякуємо за заявку!</p>
+                    <p class="form__success-text" data-i18n>Замірник зателефонує вам протягом 15 хвилин.</p>
+                    <button class="form__success-btn" type="button" data-form-reset data-i18n>Надіслати ще одну заявку</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="services">
+          <div class="container">
+            <div class="services__title title">
+              <h2 data-i18n id="services">Наші послуги</h2>
+            </div>
+            <div class="services__content">
+              <div class="services__card" data-modal="modal-1" tabindex="0" role="button">
+                <div class="services__card_title">
+                  <img loading="lazy" decoding="async" src="img/icon/serv_card-1.svg" alt="" />
+                  <h3 data-i18n>Встановлення пластикових вікон</h3>
+                </div>
+                <div class="services__card_subtitle">
+                  <p data-i18n>Пластикові вікна Rehau від перевіреного виробника з гарантією якості</p>
+                </div>
+                <svg width="40" height="21" viewBox="0 0 40 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M23.3846 1.75L38 10.75L23.3846 19.75" stroke="white" stroke-width="2" />
+                  <path d="M0 10.75H37.0256" stroke="white" stroke-width="2" />
+                </svg>
+              </div>
+              <div class="services__card services__card-2" data-modal="modal-2" tabindex="0" role="button">
+                <div class="services__card_title">
+                  <img loading="lazy" decoding="async" src="img/icon/serv_card-2.svg" alt="" />
+                  <h3 data-i18n>Скління балконів та лоджій</h3>
+                </div>
+                <div class="services__card_subtitle">
+                  <p data-i18n>
+                    Склимо та оздоблюємо балкони й лоджії. Тепле та холодне скління, виготовлення виносів і дахів. Беремося за
+                    складні об'єкти
+                  </p>
+                </div>
+                <svg width="40" height="21" viewBox="0 0 40 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M23.3846 1.75L38 10.75L23.3846 19.75" stroke="white" stroke-width="2" />
+                  <path d="M0 10.75H37.0256" stroke="white" stroke-width="2" />
+                </svg>
+              </div>
+              <div class="services__card services__card-3" data-modal="modal-3" tabindex="0" role="button">
+                <div class="services__card_title">
+                  <img loading="lazy" decoding="async" src="img/icon/serv_card-3.svg" alt="" />
+                  <h3 data-i18n>Скління котеджів і дач</h3>
+                </div>
+                <div class="services__card_subtitle">
+                  <p data-i18n>
+                    Скління та оздоблення під ключ: від котеджів і дач до терас та альтанок. Для кожного об'єкта виділяємо
+                    особистого технолога
+                  </p>
+                </div>
+                <svg width="40" height="21" viewBox="0 0 40 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M23.3846 1.75L38 10.75L23.3846 19.75" stroke="white" stroke-width="2" />
+                  <path d="M0 10.75H37.0256" stroke="white" stroke-width="2" />
+                </svg>
+              </div>
+              <div class="services__card services__card-4" data-modal="modal-4" tabindex="0" role="button">
+                <div class="services__card_title">
+                  <img loading="lazy" decoding="async" src="img/icon/serv_card-4.svg" alt="" />
+                  <h3 data-i18n>Скління комерційних об'єктів</h3>
+                </div>
+                <div class="services__card_subtitle">
+                  <p data-i18n>Реалізуємо складні проєкти скління торгових центрів, ресторанів, виробничих приміщень та офісів</p>
+                </div>
+                <svg width="40" height="21" viewBox="0 0 40 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M23.3846 1.75L38 10.75L23.3846 19.75" stroke="white" stroke-width="2" />
+                  <path d="M0 10.75H37.0256" stroke="white" stroke-width="2" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="modal modal-1" role="dialog" aria-modal="true" aria-labelledby="modal-title-1" aria-hidden="true">
+            <div class="modal__wrap">
+              <button data-i18n-attr="aria-label" class="modal__btn-remove" type="button" aria-label="Закрити">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 18 19" fill="none" aria-hidden="true">
+                  <path d="M17 1.5L1 17.5M1 1.5L17 17.5" stroke="black" stroke-width="2" />
+                </svg>
+              </button>
+              <div class="modal__content">
+                <div class="modal__content-top">
+                  <div class="modal__top-image">
+                    <img loading="lazy" decoding="async" src="./img/modal-top-image.webp" alt="" />
+                  </div>
+                  <div class="modal__top-offers">
+                    <h5 data-i18n id="modal-title-1">Встановлення пластикових вікон</h5>
+                    <p data-i18n>Пластикові вікна Rehau від перевіреного виробника з гарантією якості</p>
+                    <div class="modal__main-offers-btn">
+                      <button data-i18n class="modal__main-offers-btn-orange btn" type="button" data-modal="modal-order">
+                        Заявка на замір
+                      </button>
+                      <button data-i18n class="modal__main-offers-btn-blue btn" type="button" data-modal="modal-calc">
+                        Розрахувати вартість
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal__main">
+                  <div class="modal__main-block">
+                    <div class="modal__main-image">
+                      <img loading="lazy" decoding="async" src="./img/modal-main-image1.svg" alt="" />
+                    </div>
+                    <div class="modal__main-inner">
+                      <h6 data-i18n>Кольорові вікна</h6>
+                      <p data-i18n>Ламінування плівкою, ламінування в масі, 3D-ламінування, а також фарбування вікон.</p>
+                    </div>
+                  </div>
+                  <div class="modal__main-block">
+                    <div class="modal__main-image">
+                      <img loading="lazy" decoding="async" src="./img/modal-main-image2.svg" alt="" />
+                    </div>
+                    <div class="modal__main-inner">
+                      <h6 data-i18n>Ламінація</h6>
+                      <p data-i18n>Пластикові вікна можуть бути будь-якого кольору — як усередині, так і зовні.</p>
+                    </div>
+                  </div>
+                  <div class="modal__main-block">
+                    <div class="modal__main-image">
+                      <img loading="lazy" decoding="async" src="./img/modal-main-image3.svg" alt="" />
+                    </div>
+                    <div class="modal__main-inner">
+                      <h6 data-i18n>Підвіконня</h6>
+                      <p data-i18n>Якісне підвіконня не дряпається, витримує великі навантаження й служитиме вам довгі роки.</p>
+                    </div>
+                  </div>
+                  <div class="modal__main-block">
+                    <div class="modal__main-image">
+                      <img loading="lazy" decoding="async" src="./img/modal-main-image4.svg" alt="" />
+                    </div>
+                    <div class="modal__main-inner">
+                      <h6 data-i18n>Кольорові ручки</h6>
+                      <p data-i18n>
+                        Оригінальні віконні ручки підкреслять дизайн вікна. Підберемо колір ручок відповідно до кольору всієї
+                        конструкції.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="modal__main-block">
+                    <div class="modal__main-image">
+                      <img loading="lazy" decoding="async" src="./img/modal-main-image5.svg" alt="" />
+                    </div>
+                    <div class="modal__main-inner">
+                      <h6 data-i18n>Провітрювачі</h6>
+                      <p data-i18n>
+                        Постійне оновлення повітря в кімнаті знижує ризик алергії, покращує сон і позитивно впливає на
+                        самопочуття.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="modal__main-block">
+                    <div class="modal__main-image">
+                      <img loading="lazy" decoding="async" src="./img/modal-main-image6.svg" alt="" />
+                    </div>
+                    <div class="modal__main-inner">
+                      <h6 data-i18n>Москітні сітки</h6>
+                      <p data-i18n>
+                        Комахи залишаться на вулиці, а ваша кішка — у квартирі. Встановлюємо сітки на пластикові вікна будь-яких
+                        форм і розмірів.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal modal-2" role="dialog" aria-modal="true" aria-labelledby="modal-title-2" aria-hidden="true">
+            <div class="modal__wrap">
+              <button data-i18n-attr="aria-label" class="modal__btn-remove" type="button" aria-label="Закрити">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 18 19" fill="none" aria-hidden="true">
+                  <path d="M17 1.5L1 17.5M1 1.5L17 17.5" stroke="black" stroke-width="2" />
+                </svg>
+              </button>
+              <div class="modal__content">
+                <div class="modal__content-top">
+                  <div class="modal__top-image">
+                    <img loading="lazy" decoding="async" src="./img/modal-top-image2.webp" alt="" />
+                  </div>
+                  <div class="modal__top-offers">
+                    <h5 data-i18n id="modal-title-2">Скління балконів і лоджій</h5>
+                    <p data-i18n>
+                      Склимо та оздоблюємо балкони й лоджії. Тепле та холодне скління, виготовлення виносів і дахів. Беремося за
+                      складні об'єкти.
+                    </p>
+                    <div class="modal__main-offers-btn">
+                      <button data-i18n class="modal__main-offers-btn-orange btn" type="button" data-modal="modal-order">
+                        Заявка на замір
+                      </button>
+                      <button data-i18n class="modal__main-offers-btn-blue btn" type="button" data-modal="modal-calc">
+                        Розрахувати вартість
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal__main">
+                  <div class="modal__main-block">
+                    <div class="modal__main-image">
+                      <img loading="lazy" decoding="async" src="./img/modal-main-image1.svg" alt="" />
+                    </div>
+                    <div class="modal__main-inner">
+                      <h6 data-i18n>Тепле скління</h6>
+                      <p data-i18n>Тепле скління дає змогу перетворити балкон чи лоджію на повноцінне житлове приміщення.</p>
+                    </div>
+                  </div>
+                  <div class="modal__main-block">
+                    <div class="modal__main-image">
+                      <img loading="lazy" decoding="async" src="./img/modal-main-image2.svg" alt="" />
+                    </div>
+                    <div class="modal__main-inner">
+                      <h6 data-i18n>Холодне скління</h6>
+                      <p data-i18n>Холодне скління підійде, якщо балкон чи лоджія використовуються для зберігання речей.</p>
+                    </div>
+                  </div>
+                  <div class="modal__main-block">
+                    <div class="modal__main-image">
+                      <img loading="lazy" decoding="async" src="./img/modal-main-image3.svg" alt="" />
+                    </div>
+                    <div class="modal__main-inner">
+                      <h6 data-i18n>Панорамне скління</h6>
+                      <p data-i18n>Скління від підлоги до стелі: максимум природного світла та чудовий краєвид.</p>
+                    </div>
+                  </div>
+                  <div class="modal__main-block">
+                    <div class="modal__main-image">
+                      <img loading="lazy" decoding="async" src="./img/modal-main-image4.svg" alt="" />
+                    </div>
+                    <div class="modal__main-inner">
+                      <h6 data-i18n>Скління з виносом</h6>
+                      <p data-i18n>Спосіб збільшити площу та об'єм балкона чи лоджії.</p>
+                    </div>
+                  </div>
+                  <div class="modal__main-block">
+                    <div class="modal__main-image">
+                      <img loading="lazy" decoding="async" src="./img/modal-main-image5.svg" alt="" />
+                    </div>
+                    <div class="modal__main-inner">
+                      <h6 data-i18n>Скління з дахом</h6>
+                      <p data-i18n>Зведення даху для будинків з високою стелею та квартир на останніх поверхах.</p>
+                    </div>
+                  </div>
+                  <div class="modal__main-block">
+                    <div class="modal__main-image">
+                      <img loading="lazy" decoding="async" src="./img/modal-main-image6.svg" alt="" />
+                    </div>
+                    <div class="modal__main-inner">
+                      <h6 data-i18n>Об'єднання з кімнатою</h6>
+                      <p data-i18n>Перепланування, що додає метри корисної площі та покращує житлові умови.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal modal-3" role="dialog" aria-modal="true" aria-labelledby="modal-title-3" aria-hidden="true">
+            <div class="modal__wrap">
+              <button data-i18n-attr="aria-label" class="modal__btn-remove" type="button" aria-label="Закрити">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 18 19" fill="none" aria-hidden="true">
+                  <path d="M17 1.5L1 17.5M1 1.5L17 17.5" stroke="black" stroke-width="2" />
+                </svg>
+              </button>
+              <div class="modal__content">
+                <div class="modal__content-top">
+                  <div class="modal__top-image">
+                    <img loading="lazy" decoding="async" src="./img/modal-top-image3.webp" alt="" />
+                  </div>
+                  <div class="modal__top-offers">
+                    <h5 data-i18n id="modal-title-3">Скління котеджів і дач</h5>
+                    <p data-i18n>
+                      Скління та оздоблення під ключ: від котеджів і дач до терас та альтанок. Для кожного об'єкта виділяємо
+                      особистого технолога.
+                    </p>
+                    <div class="modal__main-offers-btn">
+                      <button data-i18n class="modal__main-offers-btn-orange btn" type="button" data-modal="modal-order">
+                        Заявка на замір
+                      </button>
+                      <button data-i18n class="modal__main-offers-btn-blue btn" type="button" data-modal="modal-calc">
+                        Розрахувати вартість
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal__main">
+                  <div class="modal__main-block">
+                    <div class="modal__main-image">
+                      <img loading="lazy" decoding="async" src="./img/modal-main-image4.svg" alt="" />
+                    </div>
+                    <div class="modal__main-inner">
+                      <h6 data-i18n>Кольорові вікна</h6>
+                      <p data-i18n>Ламінування плівкою, ламінування в масі, 3D-ламінування, а також фарбування вікон.</p>
+                    </div>
+                  </div>
+                  <div class="modal__main-block">
+                    <div class="modal__main-image">
+                      <img loading="lazy" decoding="async" src="./img/modal-main-image2.svg" alt="" />
+                    </div>
+                    <div class="modal__main-inner">
+                      <h6 data-i18n>Фігурні вікна</h6>
+                      <p data-i18n>Арочні, трапецієподібні, трикутні, круглі та багатокутні вікна.</p>
+                    </div>
+                  </div>
+                  <div class="modal__main-block">
+                    <div class="modal__main-image">
+                      <img loading="lazy" decoding="async" src="./img/modal-main-image3.svg" alt="" />
+                    </div>
+                    <div class="modal__main-inner">
+                      <h6 data-i18n>Алюмінієві конструкції</h6>
+                      <p data-i18n>Ідеальний варіант для великої площі скління: зимові сади, тераси тощо.</p>
+                    </div>
+                  </div>
+                  <div class="modal__main-block">
+                    <div class="modal__main-image">
+                      <img loading="lazy" decoding="async" src="./img/modal-main-image4.svg" alt="" />
+                    </div>
+                    <div class="modal__main-inner">
+                      <h6 data-i18n>Дерев'яні вікна</h6>
+                      <p data-i18n>Екологічне та натуральне рішення для скління будь-якого об'єкта.</p>
+                    </div>
+                  </div>
+                  <div class="modal__main-block">
+                    <div class="modal__main-image">
+                      <img loading="lazy" decoding="async" src="./img/modal-main-image5.svg" alt="" />
+                    </div>
+                    <div class="modal__main-inner">
+                      <h6 data-i18n>Портальні системи</h6>
+                      <p data-i18n>
+                        Ексклюзивні розсувні дверні та балконні конструкції для преміальних квартир і будинків: панорамний вид та
+                        економія простору.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="modal__main-block">
+                    <div class="modal__main-image">
+                      <img loading="lazy" decoding="async" src="./img/modal-main-image6.svg" alt="" />
+                    </div>
+                    <div class="modal__main-inner">
+                      <h6 data-i18n>Ролети та ворота</h6>
+                      <p data-i18n>Захисні ролети для приватних будинків, ролетні ворота.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal modal-4" role="dialog" aria-modal="true" aria-labelledby="modal-title-4" aria-hidden="true">
+            <div class="modal__wrap">
+              <button data-i18n-attr="aria-label" class="modal__btn-remove" type="button" aria-label="Закрити">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 18 19" fill="none" aria-hidden="true">
+                  <path d="M17 1.5L1 17.5M1 1.5L17 17.5" stroke="black" stroke-width="2" />
+                </svg>
+              </button>
+              <div class="modal__content">
+                <div class="modal__content-top">
+                  <div class="modal__top-image">
+                    <img loading="lazy" decoding="async" src="./img/modal-top-image4.webp" alt="" />
+                  </div>
+                  <div class="modal__top-offers">
+                    <h5 data-i18n id="modal-title-4">Скління комерційних об'єктів</h5>
+                    <p data-i18n>
+                      Реалізуємо складні проєкти скління торгових центрів, ресторанів, виробничих приміщень та офісів.
+                    </p>
+                    <div class="modal__main-offers-btn">
+                      <button data-i18n class="modal__main-offers-btn-orange btn" type="button" data-modal="modal-order">
+                        Заявка на замір
+                      </button>
+                      <button data-i18n class="modal__main-offers-btn-blue btn" type="button" data-modal="modal-calc">
+                        Розрахувати вартість
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal__main">
+                  <div class="modal__main-block">
+                    <div class="modal__main-image">
+                      <img loading="lazy" decoding="async" src="./img/modal-main-image1.svg" alt="" />
+                    </div>
+                    <div class="modal__main-inner">
+                      <h6 data-i18n>Багатоквартирні будинки</h6>
+                      <p data-i18n>Виготовлення та монтаж вікон ПВХ під ключ. Запрошуємо до партнерства забудовників.</p>
+                    </div>
+                  </div>
+                  <div class="modal__main-block">
+                    <div class="modal__main-image">
+                      <img loading="lazy" decoding="async" src="./img/modal-main-image2.svg" alt="" />
+                    </div>
+                    <div class="modal__main-inner">
+                      <h6 data-i18n>Офісні приміщення</h6>
+                      <p data-i18n>Встановлення пластикових вікон, офісних перегородок, дверей і вхідних груп.</p>
+                    </div>
+                  </div>
+                  <div class="modal__main-block">
+                    <div class="modal__main-image">
+                      <img loading="lazy" decoding="async" src="./img/modal-main-image3.svg" alt="" />
+                    </div>
+                    <div class="modal__main-inner">
+                      <h6 data-i18n>Соціальні об'єкти</h6>
+                      <p data-i18n>Склимо дитячі садки, школи, медичні заклади.</p>
+                    </div>
+                  </div>
+                  <div class="modal__main-block">
+                    <div class="modal__main-image">
+                      <img loading="lazy" decoding="async" src="./img/modal-main-image4.svg" alt="" />
+                    </div>
+                    <div class="modal__main-inner">
+                      <h6 data-i18n>Торговельні об'єкти</h6>
+                      <p data-i18n>Скління магазинів, торгових центрів і вітрин.</p>
+                    </div>
+                  </div>
+                  <div class="modal__main-block">
+                    <div class="modal__main-image">
+                      <img loading="lazy" decoding="async" src="./img/modal-main-image5.svg" alt="" />
+                    </div>
+                    <div class="modal__main-inner">
+                      <h6 data-i18n>Спортивні об'єкти</h6>
+                      <p data-i18n>Склимо спортивні зали, басейни, криті спорткомплекси.</p>
+                    </div>
+                  </div>
+                  <div class="modal__main-block">
+                    <div class="modal__main-image">
+                      <img loading="lazy" decoding="async" src="./img/modal-main-image6.svg" alt="" />
+                    </div>
+                    <div class="modal__main-inner">
+                      <h6 data-i18n>Виробничі приміщення</h6>
+                      <p data-i18n>Встановлюємо вікна на складах і промислових будівлях відповідно до вимог бізнесу.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="products">
+          <div class="container">
+            <div class="products__content">
+              <div class="products__title title">
+                <h3 data-i18n id="products">Виробництво</h3>
+              </div>
+              <nav class="menu">
+                <ul class="menu__list" role="tablist" aria-labelledby="products">
+                  <li role="presentation"><button type="button" role="tab" id="products-tab-1" class="menu__item active" data-tab="#tab_1" aria-controls="tab_1" aria-selected="true" data-i18n>Стандартний</button></li>
+                  <li role="presentation"><button type="button" role="tab" id="products-tab-2" class="menu__item" data-tab="#tab_2" aria-controls="tab_2" aria-selected="false" tabindex="-1" data-i18n>Бізнес</button></li>
+                  <li role="presentation"><button type="button" role="tab" id="products-tab-3" class="menu__item" data-tab="#tab_3" aria-controls="tab_3" aria-selected="false" tabindex="-1" data-i18n>Преміум</button></li>
+                  <li role="presentation"><button type="button" role="tab" id="products-tab-4" class="menu__item" data-tab="#tab_4" aria-controls="tab_4" aria-selected="false" tabindex="-1" data-i18n>Ексклюзивний</button></li>
+                </ul>
+              </nav>
+              <div class="products__body">
+                <div class="products__body-content active" id="tab_1" role="tabpanel" aria-labelledby="products-tab-1" tabindex="0">
+                  <div class="products__image">
+                    <img loading="lazy" decoding="async" data-i18n-attr="alt" src="img/products_img.webp" alt="Профіль вікна Rehau у розрізі" />
+                  </div>
+                  <div class="products__desc">
+                    <div class="products__desc-title">
+                      <h2>Rehau Blitz New</h2>
+                      <p data-i18n>
+                        Зберігають тепло в домі, захищають від шуму та пасують до будь-якого інтер'єру. Практичний вибір.
+                      </p>
+                    </div>
+                    <div class="products__list">
+                      <ul>
+                        <li class="products__item">
+                          <span data-i18n class="products__key">Монтажна глибина</span>
+                          <span data-i18n class="products__value">60/60 мм</span>
+                        </li>
+                        <li class="products__item">
+                          <span data-i18n class="products__key">Товщина склопакета</span>
+                          <span data-i18n class="products__value">24/31 мм</span>
+                        </li>
+                        <li class="products__item">
+                          <span data-i18n class="products__key">Кількість камер</span> <span class="products__value">3</span>
+                        </li>
+                        <li class="products__item">
+                          <span data-i18n class="products__key">Опір теплопередачі</span>
+                          <span data-i18n class="products__value">0,70 м²·°C/Вт</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="products__body-content" id="tab_2" role="tabpanel" aria-labelledby="products-tab-2" tabindex="0">
+                  <div class="products__image">
+                    <img loading="lazy" decoding="async" data-i18n-attr="alt" src="img/products_img2.webp" alt="Профіль вікна Rehau у розрізі" />
+                  </div>
+                  <div class="products__desc">
+                    <div class="products__desc-title">
+                      <h2>Rehau Blitz New</h2>
+                      <p data-i18n>
+                        Зберігають тепло в домі, захищають від шуму та пасують до будь-якого інтер'єру. Практичний вибір.
+                      </p>
+                    </div>
+                    <div class="products__list">
+                      <ul>
+                        <li class="products__item">
+                          <span data-i18n class="products__key">Монтажна глибина</span>
+                          <span data-i18n class="products__value">60/60 мм</span>
+                        </li>
+                        <li class="products__item">
+                          <span data-i18n class="products__key">Товщина склопакета</span>
+                          <span data-i18n class="products__value">24/31 мм</span>
+                        </li>
+                        <li class="products__item">
+                          <span data-i18n class="products__key">Кількість камер</span> <span class="products__value">3</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="products__body-content" id="tab_3" role="tabpanel" aria-labelledby="products-tab-3" tabindex="0">
+                  <div class="products__image">
+                    <img loading="lazy" decoding="async" data-i18n-attr="alt" src="img/products_img3.webp" alt="Профіль вікна Rehau у розрізі" />
+                  </div>
+                  <div class="products__desc">
+                    <div class="products__desc-title">
+                      <h2>Rehau Blitz New</h2>
+                      <p data-i18n>
+                        Зберігають тепло в домі, захищають від шуму та пасують до будь-якого інтер'єру. Практичний вибір.
+                      </p>
+                    </div>
+                    <div class="products__list">
+                      <ul>
+                        <li class="products__item">
+                          <span data-i18n class="products__key">Монтажна глибина</span>
+                          <span data-i18n class="products__value">60/60 мм</span>
+                        </li>
+                        <li class="products__item">
+                          <span data-i18n class="products__key">Товщина склопакета</span>
+                          <span data-i18n class="products__value">24/31 мм</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="products__body-content" id="tab_4" role="tabpanel" aria-labelledby="products-tab-4" tabindex="0">
+                  <div class="products__image">
+                    <img loading="lazy" decoding="async" data-i18n-attr="alt" src="img/products_img4.webp" alt="Профіль вікна Rehau у розрізі" />
+                  </div>
+                  <div class="products__desc">
+                    <div class="products__desc-title">
+                      <h2>Rehau Blitz New</h2>
+                      <p data-i18n>
+                        Зберігають тепло в домі, захищають від шуму та пасують до будь-якого інтер'єру. Практичний вибір.
+                      </p>
+                    </div>
+                    <div class="products__list">
+                      <ul>
+                        <li class="products__item">
+                          <span data-i18n class="products__key">Монтажна глибина</span>
+                          <span data-i18n class="products__value">60/60 мм</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="schtandart">
+          <div class="container">
+            <div class="schtandart__content">
+              <div class="schtandart__body">
+                <div class="schtandart__logo">
+                  <img loading="lazy" decoding="async" src="img/icon/schtan-img-logo.svg" alt="Rehau" />
+                </div>
+                <div class="schtandart__inner">
+                  <div class="schtandart__block-1">
+                    <img loading="lazy" decoding="async" src="img/icon/schtan-img1.svg" alt="" />
+                    <p data-i18n>Сертифікований виробник Rehau</p>
+                  </div>
+                  <div class="schtandart__block-1">
+                    <img loading="lazy" decoding="async" src="img/icon/schtan-img2.svg" alt="" />
+                    <p data-i18n>Інноваційний віконний завод</p>
+                  </div>
+                  <div class="schtandart__block-1">
+                    <img loading="lazy" decoding="async" src="img/icon/schtan-img3.svg" alt="" />
+                    <p data-i18n>Лідер з переробки профілю Rehau в Україні</p>
+                  </div>
+                  <div class="schtandart__block-1">
+                    <img loading="lazy" decoding="async" src="img/icon/schtan-img4.svg" alt="" />
+                    <p data-i18n>Високотехнологічне автоматизоване обладнання</p>
+                  </div>
+                  <div class="schtandart__block-1">
+                    <img loading="lazy" decoding="async" src="img/icon/schtan-img5.svg" alt="" />
+                    <p data-i18n>Широкий асортимент продукції</p>
+                  </div>
+                </div>
+              </div>
+              <div class="schtandart__block-btn">
+                <button data-i18n class="schtandart__button-blue btn" type="button" data-modal="modal-calc">
+                  Розрахувати вартість
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="company">
+          <div class="container">
+            <div class="company__content">
+              <div class="company__title title">
+                <h3 data-i18n id="company">Про компанію</h3>
+              </div>
+              <nav class="company__menu">
+                <ul class="company__menu-list" role="tablist" aria-labelledby="company">
+                  <li role="presentation"><button type="button" role="tab" id="company-tab-1" class="company__menu-item active" data-tab="#tab-1" aria-controls="tab-1" aria-selected="true" data-i18n>Опис</button></li>
+                  <li role="presentation"><button type="button" role="tab" id="company-tab-2" class="company__menu-item" data-tab="#tab-2" aria-controls="tab-2" aria-selected="false" tabindex="-1" data-i18n>Як ми працюємо</button></li>
+                  <li role="presentation"><button type="button" role="tab" id="company-tab-3" class="company__menu-item" data-tab="#tab-3" aria-controls="tab-3" aria-selected="false" tabindex="-1" data-i18n>Відгуки</button></li>
+                  <li role="presentation"><button type="button" role="tab" id="company-tab-4" class="company__menu-item" data-tab="#tab-4" aria-controls="tab-4" aria-selected="false" tabindex="-1" data-i18n>Сертифікати</button></li>
+                </ul>
+              </nav>
+              <div class="company__body">
+                <div class="company__body-content company__body-content--media active" id="tab-1" role="tabpanel" aria-labelledby="company-tab-1" tabindex="0">
+                  <div class="company__block-1">
+                    <div class="company__logo">
+                      <img loading="lazy" decoding="async" data-i18n-attr="alt" src="img/icon/logo-big.webp" alt="Вікна Хаус" />
+                    </div>
+                    <div class="company__info">
+                      <p data-i18n>
+                        Допомагаємо клієнтам підібрати рішення з урахуванням побажань щодо характеристик вікна та бюджету. Вікно
+                        служить багато років, тому для нас дуже важливо, щоб ви зробили правильний вибір.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="company__video">
+                    <video class="company__video_item" controls muted playsinline preload="none" poster="videos/company-vicna-poster.webp" data-autoplay>
+                      <source src="videos/company-vicna.webm" type="video/webm" />
+                      <source src="videos/company-vicna.mp4" type="video/mp4" />
+                    </video>
+                  </div>
+                </div>
+              </div>
+              <div class="company__body">
+                <div class="company__body-content" id="tab-2" role="tabpanel" aria-labelledby="company-tab-2" tabindex="0">
+                  <div class="company__services">
+                    <div class="company__title title">
+                      <h3 data-i18n>Як ми працюємо</h3>
+                    </div>
+                    <div class="company__services-wrap">
+                      <div class="company__services-body">
+                        <div class="company__services-image">
+                          <img loading="lazy" decoding="async" src="./img/icon/company-services-image-1.svg" alt="" />
+                        </div>
+                        <div class="company__services-content">
+                          <h4 data-i18n>Безкоштовний виїзд</h4>
+                          <p data-i18n>Безкоштовно виїжджаємо в усі населені пункти області</p>
+                        </div>
+                      </div>
+                      <div class="company__services-body">
+                        <div class="company__services-image">
+                          <img loading="lazy" decoding="async" src="./img/icon/company-services-image-2.svg" alt="" />
+                        </div>
+                        <div class="company__services-content">
+                          <h4 data-i18n>Працюємо щодня</h4>
+                          <p data-i18n>З 9:00 до 21:00 без вихідних і свят</p>
+                        </div>
+                      </div>
+                      <div class="company__services-body">
+                        <div class="company__services-image">
+                          <img loading="lazy" decoding="async" src="./img/icon/company-services-image-3.svg" alt="" />
+                        </div>
+                        <div class="company__services-content">
+                          <h4 data-i18n>Зразки з собою</h4>
+                          <p data-i18n>Показуємо зразки профільних систем та оздоблювальних матеріалів</p>
+                        </div>
+                      </div>
+                      <div class="company__services-body">
+                        <div class="company__services-image">
+                          <img loading="lazy" decoding="async" src="./img/icon/company-services-image-4.svg" alt="" />
+                        </div>
+                        <div class="company__services-content">
+                          <h4 data-i18n>Вартість</h4>
+                          <p data-i18n>Точну вартість замовлення називаємо на місці</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="company__body">
+                <div class="company__body-content company__body-content--media" id="tab-3" role="tabpanel" aria-labelledby="company-tab-3" tabindex="0">
+                  <div class="company__block-1">
+                    <div class="company__logo">
+                      <img loading="lazy" decoding="async" data-i18n-attr="alt" src="img/icon/logo-big-3.webp" alt="Вікна Хаус" />
+                    </div>
+                    <div class="company__info">
+                      <p data-i18n>
+                        Допомагаємо клієнтам обрати оптимальне рішення з урахуванням їхніх вимог до вікон і бюджету. Вікна купують
+                        на довгі роки, тому ми дуже уважно ставимося до кожного вибору.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="company__video">
+                    <video class="company__video_item" controls muted playsinline preload="none" poster="videos/company-vicna-poster.webp" data-autoplay>
+                      <source src="videos/company-vicna.webm" type="video/webm" />
+                      <source src="videos/company-vicna.mp4" type="video/mp4" />
+                    </video>
+                  </div>
+                </div>
+              </div>
+              <div class="company__body">
+                <div class="company__body-content" id="tab-4" role="tabpanel" aria-labelledby="company-tab-4" tabindex="0">
+                  <div class="company__services">
+                    <div class="company__title title">
+                      <h3 data-i18n>Як ми працюємо</h3>
+                    </div>
+                    <div class="company__services-wrap">
+                      <div class="company__services-body">
+                        <div class="company__services-image">
+                          <img loading="lazy" decoding="async" src="./img/icon/company-services-image-1.svg" alt="" />
+                        </div>
+                        <div class="company__services-content">
+                          <h4 data-i18n>Безкоштовний виїзд</h4>
+                          <p data-i18n>Безкоштовно виїжджаємо в усі населені пункти області</p>
+                        </div>
+                      </div>
+                      <div class="company__services-body">
+                        <div class="company__services-image">
+                          <img loading="lazy" decoding="async" src="./img/icon/company-services-image-2.svg" alt="" />
+                        </div>
+                        <div class="company__services-content">
+                          <h4 data-i18n>Працюємо щодня</h4>
+                          <p data-i18n>З 9:00 до 21:00 без вихідних і свят</p>
+                        </div>
+                      </div>
+                      <div class="company__services-body">
+                        <div class="company__services-image">
+                          <img loading="lazy" decoding="async" src="./img/icon/company-services-image-3.svg" alt="" />
+                        </div>
+                        <div class="company__services-content">
+                          <h4 data-i18n>Зразки з собою</h4>
+                          <p data-i18n>Показуємо зразки профільних систем та оздоблювальних матеріалів</p>
+                        </div>
+                      </div>
+                      <div class="company__services-body">
+                        <div class="company__services-image">
+                          <img loading="lazy" decoding="async" src="./img/icon/company-services-image-4.svg" alt="" />
+                        </div>
+                        <div class="company__services-content">
+                          <h4 data-i18n>Вартість</h4>
+                          <p data-i18n>Точну вартість замовлення називаємо на місці</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="company__wrap">
+                <div class="company__inner-1 company__flex">
+                  <div class="company__image">
+                    <img loading="lazy" decoding="async" src="img/icon/company-icon1.svg" alt="" />
+                  </div>
+                  <div class="company__desc">
+                    <h5 data-i18n>Професіоналізм</h5>
+                    <p data-i18n>Бригада професійних майстрів для встановлення та обслуговування</p>
+                  </div>
+                </div>
+                <div class="company__inner-2 company__flex">
+                  <div class="company__image">
+                    <img loading="lazy" decoding="async" src="img/icon/company-icon2.svg" alt="" />
+                  </div>
+                  <div class="company__desc">
+                    <h5 data-i18n>Вигідні ціни</h5>
+                    <p data-i18n>Найкращі ціни на ринку пластикових вікон</p>
+                  </div>
+                </div>
+                <div class="company__inner-3 company__flex">
+                  <div class="company__image">
+                    <img loading="lazy" decoding="async" src="img/icon/company-icon3.svg" alt="" />
+                  </div>
+                  <div class="company__desc">
+                    <h5 data-i18n>Мобільність</h5>
+                    <p data-i18n>Укладаємо договір на місці</p>
+                  </div>
+                </div>
+                <div class="company__inner-4 company__flex">
+                  <div class="company__image">
+                    <img loading="lazy" decoding="async" src="img/icon/company-icon4.svg" alt="" />
+                  </div>
+                  <div class="company__desc">
+                    <h5 data-i18n>Довіра</h5>
+                    <p data-i18n>99% клієнтів рекомендують нас друзям</p>
+                  </div>
+                </div>
+                <div class="company__inner-5 company__flex">
+                  <div class="company__image">
+                    <img loading="lazy" decoding="async" src="img/icon/company-icon5.svg" alt="" />
+                  </div>
+                  <div class="company__desc">
+                    <h5 data-i18n>Швидкість</h5>
+                    <p data-i18n>Стислі терміни виготовлення</p>
+                  </div>
+                </div>
+                <div class="company__inner-6 company__flex">
+                  <div class="company__image">
+                    <img loading="lazy" decoding="async" src="img/icon/company-icon6.svg" alt="" />
+                  </div>
+                  <div class="company__desc">
+                    <h5 data-i18n>Контроль якості</h5>
+                    <p data-i18n>Бездоганна якість і контроль виробів ПВХ</p>
+                  </div>
+                </div>
+              </div>
+              <div class="company__btn-inner">
+                <button data-i18n class="company__button-orange btn" type="button" data-modal="modal-order">
+                  Залишити заявку на замір
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="portfolio">
+          <div class="container">
+            <div class="portfolio__content">
+              <div class="portfolio__title title">
+                <h3 data-i18n id="portfolio">Портфоліо</h3>
+              </div>
+              <div class="portfolio__body">
+                <div class="portfolio__slaider">
+                  <img loading="lazy" decoding="async" data-i18n-attr="alt" src="img/icon/portfolio-img1.webp" alt="Приклад виконаної роботи" />
+                  <img loading="lazy" decoding="async" data-i18n-attr="alt" src="img/icon/portfolio-img1.webp" alt="Приклад виконаної роботи" />
+                  <img loading="lazy" decoding="async" data-i18n-attr="alt" src="img/icon/portfolio-img1.webp" alt="Приклад виконаної роботи" />
+                  <img loading="lazy" decoding="async" data-i18n-attr="alt" src="img/icon/portfolio-img1.webp" alt="Приклад виконаної роботи" />
+                </div>
+                <div class="portfolio__image-cards">
+                  <iframe src="https://snazzymaps.com/embed/409862" width="100%" height="312px" style="border: none"></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="question">
+          <div class="container">
+            <div class="question__content">
+              <div class="question__title title">
+                <h3 data-i18n id="question">Питання та відповіді</h3>
+              </div>
+              <div class="question__body">
+                <div class="question__card">
+                  <details class="question__card-item">
+                    <summary data-i18n class="question__card-title">Скільки часу потрібно для виготовлення пластикових вікон?</summary>
+                    <div class="question__card-answer">
+                      <p data-i18n class="question__card-text">
+                      Стандартні вікна виготовляємо за 5–7 робочих днів після заміру. Нестандартні конструкції — ламіновані,
+                      фігурні чи алюмінієві — до 14 днів.
+                    </p>
+                    </div>
+                  </details>
+                </div>
+                <div class="question__card">
+                  <details class="question__card-item">
+                    <summary data-i18n class="question__card-title">Які способи оплати?</summary>
+                    <div class="question__card-answer">
+                      <p data-i18n class="question__card-text">
+                      Готівкою, банківською карткою або безготівковим переказом. Можлива оплата частинами: передоплата під час
+                      укладання договору, решта — після монтажу.
+                    </p>
+                    </div>
+                  </details>
+                </div>
+                <div class="question__card">
+                  <details class="question__card-item">
+                    <summary data-i18n class="question__card-title">Де я можу побачити зразки?</summary>
+                    <div class="question__card-answer">
+                      <p data-i18n class="question__card-text">
+                      Зразки профілів, фурнітури та оздоблення замірник привезе з собою. Також їх можна переглянути в нашому
+                      офісі.
+                    </p>
+                    </div>
+                  </details>
+                </div>
+                <div class="question__card">
+                  <details class="question__card-item">
+                    <summary data-i18n class="question__card-title">Навіщо викликати замірника, якщо я можу сам надати розміри?</summary>
+                    <div class="question__card-answer">
+                      <p data-i18n class="question__card-text">
+                      Замірник враховує стан прорізу, монтажні зазори та укоси. Помилка навіть у кілька сантиметрів може зробити
+                      вікно непридатним, тому за точність розмірів відповідаємо ми.
+                    </p>
+                    </div>
+                  </details>
+                </div>
+                <div class="question__card">
+                  <details class="question__card-item">
+                    <summary data-i18n class="question__card-title">Я хочу оздобити балкон. Ви допоможете?</summary>
+                    <div class="question__card-answer">
+                      <p data-i18n class="question__card-text">
+                      Так. Склимо, утеплюємо та оздоблюємо балкони під ключ: від демонтажу старої рами до встановлення підвіконня
+                      та освітлення.
+                    </p>
+                    </div>
+                  </details>
+                </div>
+                <div class="question__card">
+                  <details class="question__card-item">
+                    <summary data-i18n class="question__card-title">Чи потрібно наймати вантажників для підйому?</summary>
+                    <div class="question__card-answer">
+                      <p data-i18n class="question__card-text">
+                      Ні, наші майстри самі акуратно доставлять і піднімуть вікна до квартири.
+                    </p>
+                    </div>
+                  </details>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="contacts">
+          <div class="container">
+            <div class="contacts__title title">
+              <h3 data-i18n id="contacts">Контакти</h3>
+            </div>
+            <div class="contacts__content">
+              <div class="contacts__body">
+                <div class="contacts__contact">
+                  <div class="contacts__tel">
+                    <p data-i18n>Безкоштовна консультація:</p>
+                    <a href="tel:+84932343140">+8 (4932) 34-31-40</a>
+                    <a href="tel:+89051093140">+8 (905) 109-31-40</a>
+                  </div>
+                  <div class="contacts__location">
+                    <p data-i18n>м. Іваново, вул. Генерала Хлєбнікова, буд. 54, оф. 303</p>
+                    <a href="mailto:okna@haus.ua">okna@haus.ua</a>
+                  </div>
+                </div>
+                <div class="contacts__info">
+                  <p data-i18n>
+                    Монтаж вікон мають виконувати лише фахівці. Нам довіряють сотні родин. Дізнайтеся, яке рішення підійде саме
+                    вам, і придбайте якісні вікна за доступною ціною.
+                  </p>
+                </div>
+                <div class="contacts__image">
+                  <a href="#!" aria-label="Facebook"><img loading="lazy" decoding="async" src="img/icon/contacts-img5.svg" alt="" /></a>
+                  <a href="#!" aria-label="Instagram"><img loading="lazy" decoding="async" src="img/icon/contacts-img4.svg" alt="" /></a>
+                  <a href="#!" aria-label="Telegram"><img loading="lazy" decoding="async" src="img/icon/contacts-img3.svg" alt="" /></a>
+                  <a href="#!" aria-label="YouTube"><img loading="lazy" decoding="async" src="img/icon/contacts-img2.svg" alt="" /></a>
+                </div>
+              </div>
+              <div class="contacts__request">
+                <form action="#" method="post" class="contacts__form form" novalidate>
+                  <label data-i18n for="contact-name" class="form__title">Залишилися питання?</label>
+                  <input
+                    data-i18n-attr="placeholder"
+                    type="text"
+                    name="name"
+                    id="contact-name"
+                    autocomplete="name"
+                    placeholder="Представтеся, будь ласка"
+                    class="form__name form__general contacts__form-name"
+                    required
+                  />
+                  <input
+                    type="email"
+                    name="email"
+                    id="contact-email"
+                    autocomplete="email"
+                    placeholder="E-mail"
+                    class="form__email form__general contacts__form-email"
+                    required
+                  />
+                  <textarea
+                    data-i18n-attr="placeholder"
+                    name="message"
+                    id="contact-message"
+                    placeholder="Ваше питання"
+                    class="form__area form__general"
+                  ></textarea>
+                  <div class="form__box">
+                    <input
+                      type="checkbox"
+                      name="consent"
+                      id="contact-consent"
+                      class="form__checkbox contacts__checkbox"
+                      required
+                    /><label data-i18n for="contact-consent" class="form__chec-title"
+                      >Я погоджуюся на обробку <a href="#">персональних даних</a></label
+                    >
+                  </div>
+                  <p class="form__error" role="alert" data-form-error hidden data-i18n>
+                    Не вдалося надіслати. Спробуйте ще раз або зателефонуйте нам.
+                  </p>
+                  <div class="contacts__box-btn">
+                    <button data-i18n class="contacts__button-blue btn" type="submit">Надіслати</button>
+                  </div>
+                  <div class="form__success" data-form-success hidden>
+                    <div class="form__success-icon" aria-hidden="true"></div>
+                    <p class="form__success-title" tabindex="-1" data-i18n>Дякуємо за питання!</p>
+                    <p class="form__success-text" data-i18n>Ми відповімо найближчим часом.</p>
+                    <button class="form__success-btn" type="button" data-form-reset data-i18n>Поставити ще одне питання</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <div class="container">
+          <div class="footer__content">
+            <div class="footer__body">
+              <div class="footer__logo">
+                <a href="#"><img loading="lazy" decoding="async" data-i18n-attr="alt" src="img/icon/footer-logo.svg" alt="Вікна Хаус" /></a>
+                <p data-i18n>© ТОВ «Вікна Хаус», 2011–2022</p>
+              </div>
+            </div>
+            <div class="footer__custom">
+              <a data-i18n href="">Політика конфіденційності</a>
+              <a data-i18n href="">Користувацька угода</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <button class="to-top" type="button" aria-label="Нагору" title="Нагору" data-i18n-attr="aria-label title">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
+      <div class="modal modal-order" role="dialog" aria-modal="true" aria-labelledby="order-title" aria-hidden="true">
+        <div class="modal__wrap modal__wrap--form">
+          <button data-i18n-attr="aria-label" class="modal__btn-remove" type="button" aria-label="Закрити">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 18 19" fill="none" aria-hidden="true">
+              <path d="M17 1.5L1 17.5M1 1.5L17 17.5" stroke="black" stroke-width="2" />
+            </svg>
+          </button>
+          <div class="modal__content">
+            <form action="#" method="post" class="form form--modal" novalidate>
+              <label data-i18n for="order-name" class="form__title" id="order-title">Викличте замірника додому</label>
+              <p class="form__calc" data-order-calc hidden></p>
+              <input
+                data-i18n-attr="placeholder"
+                type="text"
+                name="name"
+                id="order-name"
+                autocomplete="name"
+                placeholder="Представтеся, будь ласка"
+                class="form__name form__general"
+                required
+                data-autofocus
+              />
+              <input
+                data-i18n-attr="placeholder"
+                type="tel"
+                name="tel"
+                id="order-tel"
+                inputmode="tel"
+                autocomplete="tel"
+                placeholder="Номер телефону"
+                class="form__tel form__general"
+                required
+              />
+              <input
+                type="email"
+                name="email"
+                id="order-email"
+                autocomplete="email"
+                placeholder="E-mail"
+                class="form__email form__general"
+              />
+              <div class="form__box">
+                <input type="checkbox" name="consent" id="order-consent" class="form__checkbox" required /><label
+                  data-i18n
+                  for="order-consent"
+                  class="form__chec-title"
+                  >Я погоджуюся на обробку персональних даних відповідно до <a href="#">Політики конфіденційності</a></label
+                >
+              </div>
+              <input type="hidden" name="calculation" data-order-calc-input />
+              <p class="form__error" role="alert" data-form-error hidden data-i18n>
+                Не вдалося надіслати. Спробуйте ще раз або зателефонуйте нам.
+              </p>
+              <button data-i18n class="form__button-orange btn" type="submit">Заявка на замір</button>
+              <div class="form__success" data-form-success hidden>
+                <div class="form__success-icon" aria-hidden="true"></div>
+                <p class="form__success-title" tabindex="-1" data-i18n>Дякуємо за заявку!</p>
+                <p class="form__success-text" data-i18n>Замірник зателефонує вам протягом 15 хвилин.</p>
+                <button class="form__success-btn" type="button" data-form-close data-i18n>Закрити</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="modal modal-calc" role="dialog" aria-modal="true" aria-labelledby="calc-title" aria-hidden="true">
+        <div class="modal__wrap">
+          <button data-i18n-attr="aria-label" class="modal__btn-remove" type="button" aria-label="Закрити">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 18 19" fill="none" aria-hidden="true">
+              <path d="M17 1.5L1 17.5M1 1.5L17 17.5" stroke="black" stroke-width="2" />
+            </svg>
+          </button>
+          <div class="modal__content">
+            <form class="calc" action="#">
+              <div class="calc__head">
+                <h5 data-i18n class="calc__title" id="calc-title">Калькулятор вартості вікна</h5>
+                <p data-i18n class="calc__subtitle">
+                  Орієнтовна ціна за хвилину. Точну вартість назве замірник після безкоштовного виїзду.
+                </p>
+              </div>
+              <div class="calc__body">
+                <div class="calc__fields">
+                  <fieldset class="calc__group">
+                    <legend data-i18n class="calc__label">Кількість стулок</legend>
+                    <div class="calc__options">
+                      <label class="calc__option"
+                        ><input type="radio" name="sashes" value="1" /><span data-i18n>Одна</span></label
+                      >
+                      <label class="calc__option"
+                        ><input type="radio" name="sashes" value="2" checked /><span data-i18n>Дві</span></label
+                      >
+                      <label class="calc__option"><input type="radio" name="sashes" value="3" /><span data-i18n>Три</span></label>
+                    </div>
+                  <p class="calc__hint" data-calc-hint hidden></p>
+                  </fieldset>
 
-<body>
-	<div class="wrapper">
-		<header class="header">
-			<div class="container">
-				<div class="header__content">
-					<div class="header__logo">
-						<a href="#"><img src="img/icon/logo.svg" alt="logo"></a>
-					</div>
-					<nav class="header__menu">
-						<button class="header__menu-btn">
-							<span></span>
-							<span></span>
-							<span></span>
-						</button>
-						<ul class="header__list">
-							<li class="header__item"><a href="#!">Послуги</a></li>
-							<li class="header__item"><a href="#!">Виробництво</a></li>
-							<li class="header__item"><a href="#!">Про компанію</a></li>
-							<li class="header__item"><a href="#!">Портфоліо</a></li>
-							<li class="header__item"><a href="#!">Питання та відповіді</a></li>
-							<li class="header__item"><a href="#!">Контакти</a></li>
-						</ul>
-					</nav>
-					<div class="header__order">
-						<button class="header__button-orange btn">Додаток для замірів</button>
-						<button class="header__button-blue btn">Замовити обчислення</button>
-					</div>
-				</div>
-			</div>
-		</header>
-		<main class="main">
-			<section class="ful-skrin">
-				<div class="container">
-					<div class="ful-skrin__content">
-						<div class="ful-skrin__info">
-							<div class="ful-skrin__title">
-								<h1>
-									<span>Вікна Хаус -</span> <br>
-									Професійний підхід до скління
-								</h1>
-							</div>
-							<div class="ful-skrin__servic">
-								<div class="ful-skrin__block">
-									<img src="img/icon/ocna-1.svg" alt="img">
-									<p>Сучасні структури Windows та балкон за доступними цінами</p>
-								</div>
-								<div class="ful-skrin__block">
-									<img src="img/icon/ocna-2.svg" alt="img">
-									<p>Кваліфікований підхід до вирішення проблем будь - якої складності</p>
-								</div>
-								<div class="ful-skrin__block">
-									<img src="img/icon/ocna-3.svg" alt="img">
-									<p>Гарантія найвищої якості нашої продукції</p>
-								</div>
-							</div>
-						</div>
-						<div class="ful-skrin__request">
-							<form action="#" method="post" class="ful-skrin__form form">
-								<label for="name" class="form__title">Зателефонуйте замірнику на дім</label>
-								<input type="text" name="name" id="name" placeholder="Представьтесь, пожалуйста"
-									class="form__name form__general">
-								<input type="tel" name="tel" id="tel" placeholder="Номер телефона"
-									class="form__tel form__general">
-								<input type="email" name="email" id="email" placeholder="E-mail"
-									class="form__email form__general">
-								<div class="form__box">
-									<input type="checkbox" name="checkbox" class="form__checkbox"><label
-										class="form__chec-title">Я погоджуюсь обробляти особисті дані відповідно до <a
-											href="#">Політика конфіденційності</a></label>
-								</div>
-								<div class="form__box-btn">
-									<button class="form__button-orange btn" type="submit">Заявка на замір</button>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="services">
-				<div class="container">
-					<div class="services__title title">
-						<h2 id="services">Наші послуги</h2>
-					</div>
-					<div class="services__content">
-						<div class="services__card" data-modal="modal-1">
-							<div class="services__card_title">
-								<img src="img/icon/serv_card-1.svg" alt="img">
-								<h3>Встановлення пластикових віконікон</h3>
-							</div>
-							<div class="services__card_subtitle">
-								<p>Встановіть пластикові вікна Rehau у надійного виробника з гарантією якості</p>
-							</div>
-							<svg width="40" height="21" viewBox="0 0 40 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M23.3846 1.75L38 10.75L23.3846 19.75" stroke="white" stroke-width="2" />
-								<path d="M0 10.75H37.0256" stroke="white" stroke-width="2" />
-							</svg>
-						</div>
-						<div class="services__card services__card-2" data-modal="modal-2">
-							<div class="services__card_title">
-								<img src="img/icon/serv_card-2.svg" alt="img">
-								<h3>Скління балконів та лоджій</h3>
-							</div>
-							<div class="services__card_subtitle">
-								<p>Ми займаємось скліннями та прикрасою балконів та лоджій. Тепле і холодне скління, виготовлення екстрактів та дахів. Ми беремо складні предмети</p>
-							</div>
-							<svg width="40" height="21" viewBox="0 0 40 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M23.3846 1.75L38 10.75L23.3846 19.75" stroke="white" stroke-width="2" />
-								<path d="M0 10.75H37.0256" stroke="white" stroke-width="2" />
-							</svg>
-						</div>
-						<div class="services__card services__card-3" data-modal="modal-3">
-							<div class="services__card_title">
-								<img src="img/icon/serv_card-3.svg" alt="img">
-								<h3>Скління котеджів та літніх котеджів</h3>
-							</div>
-							<div class="services__card_subtitle">
-								<p>Грейс Глазіння та закінчення: від котеджів та котеджів до терас та альтанок.Ми виділяємо особистого технолога для кожного об'єкта</p>
-							</div>
-							<svg width="40" height="21" viewBox="0 0 40 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M23.3846 1.75L38 10.75L23.3846 19.75" stroke="white" stroke-width="2" />
-								<path d="M0 10.75H37.0256" stroke="white" stroke-width="2" />
-							</svg>
-						</div>
-						<div class="services__card services__card-4" data-modal="modal-4">
-							<div class="services__card_title">
-								<img src="img/icon/serv_card-4.svg" alt="img">
-								<h3>Скління корпоративних об'єктів</h3>
-							</div>
-							<div class="services__card_subtitle">
-								<p>Ми впроваджуємо складні проекти для скляних торгових центрів, ресторанів, промислових приміщень та офісів</p>
-							</div>
-							<svg width="40" height="21" viewBox="0 0 40 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M23.3846 1.75L38 10.75L23.3846 19.75" stroke="white" stroke-width="2" />
-								<path d="M0 10.75H37.0256" stroke="white" stroke-width="2" />
-							</svg>
-						</div>
-					</div>
-				</div>
-				<div class="modal modal-1">
-					<div class="modal__wrap">
-						<button class="modal__btn-remove">
-							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 18 19" fill="none">
-								<path d="M17 1.5L0.999999 17.5" stroke="black" stroke-width="2"/>
-								<path d="M17 1.5L0.999999 17.5" stroke="black" stroke-width="2"/>
-								<path d="M1 1.5L17 17.5" stroke="black" stroke-width="2"/>
-								<path d="M1 1.5L17 17.5" stroke="black" stroke-width="2"/>
-							</svg>
-						</button>
-						<div class="modal__content">
-							<div class="modal__content-top">
-								<div class="modal__top-image">
-									<img src="./img/modal-top-image.jpg" alt="img">
-								</div>
-								<div class="modal__top-offers">
-									<h5>
-										Установка пластиковых окон
-									</h5>
-									<p>
-										Пластиковые окна Rehau
-										от проверенного производителя с
-										гарантией качества
-									</p>
-									<div class="modal__main-offers-btn">
-										<button class="modal__main-offers-btn-orange btn">Заявка на замер</button>
-										<button class="modal__main-offers-btn-blue btn">Заказать расчет</button>
-									</div>
-								</div>
-							</div>
-							<div class="modal__main">
-								<div class="modal__main-block">
-									<div class="modal__main-image">
-										<img src="./img/modal-main-image1.svg" alt="img">
-									</div>
-									<div class="modal__main-inner">
-										<h6>
-											Пластиковые окна
-										</h6>
-										<p>
-											Использование ламинационных окон, ламинации в массе, 3д-ламинации, 
-											а также покраска окон.
-										</p>
-									</div>
-								</div>
-								<div class="modal__main-block">
-									<div class="modal__main-image">
-										<img src="./img/modal-main-image2.svg" alt="img">
-									</div>
-									<div class="modal__main-inner">
-										<h6>
-											Ламинация
-										</h6>
-										<p>
-											Пластиковые окна могут быть любого нужного вам цвета. Внутри и снаружи.Ламинация
-										</p>
-									</div>
-								</div>
-								<div class="modal__main-block">
-									<div class="modal__main-image">
-										<img src="./img/modal-main-image3.svg" alt="img">
-									</div>
-									<div class="modal__main-inner">
-										<h6>
-											Подоконники
-										</h6>
-										<p>
-											Качественный подоконник не царапается, выдерживает большие нагрузки и будет служить вам долгие годы.Подоконники
-										</p>
-									</div>
-								</div>
-								<div class="modal__main-block">
-									<div class="modal__main-image">
-										<img src="./img/modal-main-image4.svg" alt="img">
-									</div>
-									<div class="modal__main-inner">
-										<h6>
-											Цветные ручки
-										</h6>
-										<p>
-											Оригинальные оконные ручки подчеркнут дизайн окна. Подберем оптимальный цвет ручек в зависимости от цвета всей конструкции.Цветные ручки
-										</p>
-									</div>
-								</div>
-								<div class="modal__main-block">
-									<div class="modal__main-image">
-										<img src="./img/modal-main-image5.svg" alt="img">
-									</div>
-									<div class="modal__main-inner">
-										<h6>
-											Проветриватели
-										</h6>
-										<p>
-											Постоянное обновление воздуха в комнате снижает риск аллергии, улучшает сон и благоприятно влияет на самочувствие.
-										</p>
-									</div>
-								</div>
-								<div class="modal__main-block">
-									<div class="modal__main-image">
-										<img src="./img/modal-main-image6.svg" alt="img">
-									</div>
-									<div class="modal__main-inner">
-										<h6>
-											Москитные сетки
-										</h6>
-										<p>
-											Нежеланные насекомые останутся на улице, а ваша кошка - в квартире. Устанавливаем сетки для пластиковых окон любых форм и размеров.
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="modal modal-2">
-					<div class="modal__wrap">
-						<button class="modal__btn-remove">
-							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 18 19" fill="none">
-								<path d="M17 1.5L0.999999 17.5" stroke="black" stroke-width="2"/>
-								<path d="M17 1.5L0.999999 17.5" stroke="black" stroke-width="2"/>
-								<path d="M1 1.5L17 17.5" stroke="black" stroke-width="2"/>
-								<path d="M1 1.5L17 17.5" stroke="black" stroke-width="2"/>
-							</svg>
-						</button>
-						<div class="modal__content">
-							<div class="modal__content-top">
-								<div class="modal__top-image">
-									<img src="./img/modal-top-image2.jpg" alt="img">
-								</div>
-								<div class="modal__top-offers">
-									<h5>
-										Остекление балконов и лоджий
-									</h5>
-									<p>
-										Занимаемся остеклением и отделкой балконов и лоджий. Теплое и холодное остекление, изготовление выносов и крыш. Беремся за сложные объекты
-									</p>
-									<div class="modal__main-offers-btn">
-										<button class="modal__main-offers-btn-orange btn">Заявка на замер</button>
-										<button class="modal__main-offers-btn-blue btn">Заказать расчет</button>
-									</div>
-								</div>
-							</div>
-							<div class="modal__main">
-								<div class="modal__main-block">
-									<div class="modal__main-image">
-										<img src="./img/modal-main-image1.svg" alt="img">
-									</div>
-									<div class="modal__main-inner">
-										<h6>
-											Тёплое остекление
-										</h6>
-										<p>
-											Теплое остекление — возможность сделать из балкона или лоджии полноценное жилое помещение.
-										</p>
-									</div>
-								</div>
-								<div class="modal__main-block">
-									<div class="modal__main-image">
-										<img src="./img/modal-main-image2.svg" alt="img">
-									</div>
-									<div class="modal__main-inner">
-										<h6>
-											Холодное остекление
-										</h6>
-										<p>
-											Холодное остекление рекомендовано в случаях, когда балкон или лоджия используются для хранения вещей.
-										</p>
-									</div>
-								</div>
-								<div class="modal__main-block">
-									<div class="modal__main-image">
-										<img src="./img/modal-main-image3.svg" alt="img">
-									</div>
-									<div class="modal__main-inner">
-										<h6>
-											Панорамное остекление
-										</h6>
-										<p>
-											Остекление от пола до потолка, дающее максимальное естественное освещение и прекрасный обзор окрестностей.Панорамное остекление
-										</p>
-									</div>
-								</div>
-								<div class="modal__main-block">
-									<div class="modal__main-image">
-										<img src="./img/modal-main-image4.svg" alt="img">
-									</div>
-									<div class="modal__main-inner">
-										<h6>
-											Остекление с выносом
-										</h6>
-										<p>
-											Способ увеличения площади и объема балкона или лоджии.Остекление с выносом
-										</p>
-									</div>
-								</div>
-								<div class="modal__main-block">
-									<div class="modal__main-image">
-										<img src="./img/modal-main-image5.svg" alt="img">
-									</div>
-									<div class="modal__main-inner">
-										<h6>
-											Остекление с крышей
-										</h6>
-										<p>
-											Строительство крыши для домов с высоким потолком и квартир, расположенных на последних этажах.Остекление с крышей
-										</p>
-									</div>
-								</div>
-								<div class="modal__main-block">
-									<div class="modal__main-image">
-										<img src="./img/modal-main-image6.svg" alt="img">
-									</div>
-									<div class="modal__main-inner">
-										<h6>
-											Объединение с комнатой
-										</h6>
-										<p>
-											Перепланировка квартиры, дающая дополнительные метры полезной площади и улучшающая жилищные условия.Объединение с комнатой
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="modal modal-3">
-					<div class="modal__wrap">
-						<button class="modal__btn-remove">
-							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 18 19" fill="none">
-								<path d="M17 1.5L0.999999 17.5" stroke="black" stroke-width="2"/>
-								<path d="M17 1.5L0.999999 17.5" stroke="black" stroke-width="2"/>
-								<path d="M1 1.5L17 17.5" stroke="black" stroke-width="2"/>
-								<path d="M1 1.5L17 17.5" stroke="black" stroke-width="2"/>
-							</svg>
-						</button>
-						<div class="modal__content">
-							<div class="modal__content-top">
-								<div class="modal__top-image">
-									<img src="./img/modal-top-image3.jpg" alt="img">
-								</div>
-								<div class="modal__top-offers">
-									<h5>
-										Остекление коттеджей и дач
-									</h5>
-									<p>
-										Остекление и отделка под ключ: от коттеджей и дач до террас и беседок. Выделяем личного технолога под каждый объект.
-									</p>
-									<div class="modal__main-offers-btn">
-										<button class="modal__main-offers-btn-orange btn">Заявка на замер</button>
-										<button class="modal__main-offers-btn-blue btn">Заказать расчет</button>
-									</div>
-								</div>
-							</div>
-							<div class="modal__main">
-								<div class="modal__main-block">
-									<div class="modal__main-image">
-										<img src="./img/modal-main-image4.svg" alt="img">
-									</div>
-									<div class="modal__main-inner">
-										<h6>
-											Цветные окна
-										</h6>
-										<p>
-											Использование ламинационных окон, ламинации в массе, 3д-ламинации, а также покраска окон.
-										</p>
-									</div>
-								</div>
-								<div class="modal__main-block">
-									<div class="modal__main-image">
-										<img src="./img/modal-main-image2.svg" alt="img">
-									</div>
-									<div class="modal__main-inner">
-										<h6>
-											Фигурные окна
-										</h6>
-										<p>
-											Арочные окна, окна трапеции, треугольные окна, круглые и многоугольные окна
-										</p>
-									</div>
-								</div>
-								<div class="modal__main-block">
-									<div class="modal__main-image">
-										<img src="./img/modal-main-image3.svg" alt="img">
-									</div>
-									<div class="modal__main-inner">
-										<h6>
-											Алюминиевые конструкции
-										</h6>
-										<p>
-											Идеальный вариант для большой площади остекления: зимние сады, террасы и т.п..
-										</p>
-									</div>
-								</div>
-								<div class="modal__main-block">
-									<div class="modal__main-image">
-										<img src="./img/modal-main-image4.svg" alt="img">
-									</div>
-									<div class="modal__main-inner">
-										<h6>
-											Деревянные окна
-										</h6>
-										<p>
-											Экологичное и натуральное решение для остекления любого объекта.
-										</p>
-									</div>
-								</div>
-								<div class="modal__main-block">
-									<div class="modal__main-image">
-										<img src="./img/modal-main-image5.svg" alt="img">
-									</div>
-									<div class="modal__main-inner">
-										<h6>
-											Портальные решения
-										</h6>
-										<p>
-											Эксклюзивные дверные и балконные раздвижные конструкции для элитных квартир и респектабельных домов, обеспечивающие панорамный вид и экономящие пространство.
-										</p>
-									</div>
-								</div>
-								<div class="modal__main-block">
-									<div class="modal__main-image">
-										<img src="./img/modal-main-image6.svg" alt="img">
-									</div>
-									<div class="modal__main-inner">
-										<h6>
-											Рольставни и ворота
-										</h6>
-										<p>
-											Защитные рольставни для частных домов, роллетные ворота
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="modal modal-4">
-					<div class="modal__wrap">
-						<button class="modal__btn-remove">
-							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 18 19" fill="none">
-								<path d="M17 1.5L0.999999 17.5" stroke="black" stroke-width="2"/>
-								<path d="M17 1.5L0.999999 17.5" stroke="black" stroke-width="2"/>
-								<path d="M1 1.5L17 17.5" stroke="black" stroke-width="2"/>
-								<path d="M1 1.5L17 17.5" stroke="black" stroke-width="2"/>
-							</svg>
-						</button>
-						<div class="modal__content">
-							<div class="modal__content-top">
-								<div class="modal__top-image">
-									<img src="./img/modal-top-image2.jpg" alt="img">
-								</div>
-								<div class="modal__top-offers">
-									<h5>
-										Остекление коттеджей и дач
-									</h5>
-									<p>
-										Остекление и отделка под ключ: от коттеджей и дач до террас и беседок. Выделяем личного технолога под каждый объект.
-									</p>
-									<div class="modal__main-offers-btn">
-										<button class="modal__main-offers-btn-orange btn">Заявка на замер</button>
-										<button class="modal__main-offers-btn-blue btn">Заказать расчет</button>
-									</div>
-								</div>
-							</div>
-							<div class="modal__main">
-								<div class="modal__main-block">
-									<div class="modal__main-image">
-										<img src="./img/modal-main-image1.svg" alt="img">
-									</div>
-									<div class="modal__main-inner">
-										<h6>
-											Многоквартирные дома
-										</h6>
-										<p>
-											Изготовление и монтаж окон ПВХ под ключ. Приглашаем к партнерству застройщиков
-										</p>
-									</div>
-								</div>
-								<div class="modal__main-block">
-									<div class="modal__main-image">
-										<img src="./img/modal-main-image2.svg" alt="img">
-									</div>
-									<div class="modal__main-inner">
-										<h6>
-											Офисные помещения
-										</h6>
-										<p>
-											Установка пластиковых окон, офисных перегородок и дверей и входных групп.
-										</p>
-									</div>
-								</div>
-								<div class="modal__main-block">
-									<div class="modal__main-image">
-										<img src="./img/modal-main-image3.svg" alt="img">
-									</div>
-									<div class="modal__main-inner">
-										<h6>
-											Социальные объекты
-										</h6>
-										<p>
-											Остекляем детские сады, школы, медицинские учреждения
-										</p>
-									</div>
-								</div>
-								<div class="modal__main-block">
-									<div class="modal__main-image">
-										<img src="./img/modal-main-image4.svg" alt="img">
-									</div>
-									<div class="modal__main-inner">
-										<h6>
-											Объекты торговли
-										</h6>
-										<p>
-											Способ увеличения площади и объема балкона или лоджии.
-										</p>
-									</div>
-								</div>
-								<div class="modal__main-block">
-									<div class="modal__main-image">
-										<img src="./img/modal-main-image5.svg" alt="img">
-									</div>
-									<div class="modal__main-inner">
-										<h6>
-											Спортивные объекты
-										</h6>
-										<p>
-											Остекляем спортивные залы, бассейны, крытые спорткомплексы
-										</p>
-									</div>
-								</div>
-								<div class="modal__main-block">
-									<div class="modal__main-image">
-										<img src="./img/modal-main-image6.svg" alt="img">
-									</div>
-									<div class="modal__main-inner">
-										<h6>
-											Производственные помещения
-										</h6>
-										<p>
-											Устанавливаем окна для складских и промышленных зданий в соответствии с требованиями бизнеса
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="products">
-				<div class="container">
-					<div class="products__content">
-						<div class="products__title title">
-							<h3 id="products">Виробництво</h3>
-						</div>
-						<nav class="menu">
-							<ul class="menu__list">
-								<li class="menu__item" data-tab="#tab_1">Стандартний</li>
-								<li class="menu__item" data-tab="#tab_2">Бізнес</li>
-								<li class="menu__item" data-tab="#tab_3">Преміум</li>
-								<li class="menu__item" data-tab="#tab_4">Ексклюзивний</li>
-							</ul>
-						</nav>
-						<div class="products__body">
-							<div class="products__body-content" id="tab_1">
-								<div class="products__image">
-									<img src="img/products_img.jpg" alt="img">
-								</div>
-								<div class="products__desc">
-									<div class="products__desc-title">
-										<h2>Rehau Blitz New</h2>
-										<p>Вони зберігають тепло в будинку, захищають від шуму і вписуються в будь -який інтер'єр.Практичний вибір</p>
-									</div>
-									<div class="products__list">
-										<ul>
-											<li class="products__item">
-												<span class="products__key">Системна глибина</span> <span
-													class="products__value">60/60 мм</span>
-											</li>
-											<li class="products__item">
-												<span class="products__key">Ширина подвійного скляного вікна</span> <span
-													class="products__value">24/31 мм</span>
-											</li>
-											<li class="products__item">
-												<span class="products__key">Повітряні камери</span> <span
-													class="products__value">3</span>
-											</li>
-											<li class="products__item">
-												<span class="products__key">Теплостійкість</span> <span
-													class="products__value">0,70 м2С/ВТ</span>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<div class="products__body-content" id="tab_2">
-								<div class="products__image">
-									<img src="img/products_img2.jpg" alt="img">
-								</div>
-								<div class="products__desc">
-									<div class="products__desc-title">
-										<h2>Rehau Blitz New</h2>
-										<p>Вони зберігають тепло в будинку, захищають від шуму і вписуються в будь -який інтер'єр.Практичний вибір</p>
-									</div>
-									<div class="products__list">
-										<ul>
-											<li class="products__item">
-												<span class="products__key">Системна глибина</span> <span
-													class="products__value">60/60 мм</span>
-											</li>
-											<li class="products__item">
-												<span class="products__key">Ширина подвійного скляного вікна</span> <span
-													class="products__value">24/31 мм</span>
-											</li>
-											<li class="products__item">
-												<span class="products__key">Повітряні камери</span> <span
-													class="products__value">3</span>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<div class="products__body-content" id="tab_3">
-								<div class="products__image">
-									<img src="img/products_img3.jpg" alt="img">
-								</div>
-								<div class="products__desc">
-									<div class="products__desc-title">
-										<h2>Rehau Blitz New</h2>
-										<p>Вони зберігають тепло в будинку, захищають від шуму і вписуються в будь -який інтер'єр.Практичний вибір</p>
-									</div>
-									<div class="products__list">
-										<ul>
-											<li class="products__item">
-												<span class="products__key">Системна глибина</span> <span
-													class="products__value">60/60 мм</span>
-											</li>
-											<li class="products__item">
-												<span class="products__key">Ширина подвійного скляного вікна</span> <span
-													class="products__value">24/31 мм</span>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<div class="products__body-content" id="tab_4">
-								<div class="products__image">
-									<img src="img/products_img4.png" alt="img">
-								</div>
-								<div class="products__desc">
-									<div class="products__desc-title">
-										<h2>Rehau Blitz New</h2>
-										<p>Вони зберігають тепло в будинку, захищають від шуму і вписуються в будь -який інтер'єр.Практичний вибір</p>
-									</div>
-									<div class="products__list">
-										<ul>
-											<li class="products__item">
-												<span class="products__key">Системна глибина</span> <span
-													class="products__value">60/60 мм</span>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="schtandart">
-				<div class="container">
-					<div class="schtandart__content">
-						<div class="schtandart__body">
-							<div class="schtandart__logo">
-								<img src="img/icon/schtan-img-logo.svg" alt="logo2"><a href="#"></a></img>
-							</div>
-							<div class="schtandart__inner">
-								<div class="schtandart__block-1">
-									<img src="img/icon/schtan-img1.svg" alt="img">
-									<p>Сертифікований виробник Rehau</p>
-								</div>
-								<div class="schtandart__block-1">
-									<img src="img/icon/schtan-img2.svg" alt="img">
-									<p>Інноваційна віконна рослина</p>
-								</div>
-								<div class="schtandart__block-1">
-									<img src="img/icon/schtan-img3.svg" alt="img">
-									<p>Лідер переробки Rehau в Україні</p>
-								</div>
-								<div class="schtandart__block-1">
-									<img src="img/icon/schtan-img4.svg" alt="img">
-									<p>Високотехнологічне автоматизоване обладнання</p>
-								</div>
-								<div class="schtandart__block-1">
-									<img src="img/icon/schtan-img5.svg" alt="img">
-									<p>Широкий асортимент продукції</p>
-								</div>
-							</div>
-						</div>
-						<div class="schtandart__block-btn">
-							<button class="schtandart__button-blue btn">Замовити обчислення</button>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="company">
-				<div class="container">
-					<div class="company__content">
-						<div class="company__title title">
-							<h3 id="company">Про компанію</h3>
-						</div>
-						<nav class="company__menu">
-							<ul class="company__menu-list">
-								<li class="company__menu-item" data-tabTwo="#tab-1">Опис</li>
-								<li class="company__menu-item" data-tabTwo="#tab-2">Як ми працюємо</li>
-								<li class="company__menu-item" data-tabTwo="#tab-3">Огляди</li>
-								<li class="company__menu-item" data-tabTwo="#tab-4">Сертифікати</li>
-							</ul>
-						</nav>
-						<div class="company__body">
-							<div class="company__body-content" id="tab-1">
-								<div class="company__block-1">
-									<div class="company__logo">
-										<img src="img/icon/logo-big.jpg" alt="logo">
-									</div>
-									<div class="company__info">
-										<p>Ми допомагаємо клієнтам вибирати рішення, враховуючи побажання характеристик вікна та його цінності.Вікно - це об'єкт, який ви будете використовувати протягом багатьох років, тому для нас дуже важливо зробити правильний вибір.</p>
-									</div>
-								</div>
-								<div class="company__video">
-									<video preload="metadata" controls autoplay muted class="company__video_item">
-										<source src="videos/company-vicna.webm" type="video/webm">
-										<source src="videos/company-vicna.mp4" type="video/mp4">
-									</video>
-								</div>
-							</div>
-						</div>
-						<div class="company__body">
-							<div class="company__body-content" id="tab-2">
-								<div class="company__services">
-									<div class="company__title title">
-										<h3>Як ми працюємо</h3>
-									</div>
-									<div class="company__services-wrap">
-										<div class="company__services-body">
-											<div class="company__services-image">
-												<img src="./img/icon/company-services-image-1.svg" alt="img">
-											</div>
-											<div class="company__services-content">
-												<h4>Ми прийдемо безкоштовно</h4>
-												<p>Ми вільно вирушаємо до всіх міст московського регіону</p>
-											</div>
-										</div>
-										<div class="company__services-body">
-											<div class="company__services-image">
-												<img src="./img/icon/company-services-image-2.svg" alt="img">
-											</div>
-											<div class="company__services-content">
-												<h4>Ми залишаємо щодня</h4>
-												<p>Від 9 до 21 вихідних та свят</p>
-											</div>
-										</div>
-										<div class="company__services-body">
-											<div class="company__services-image">
-												<img src="./img/icon/company-services-image-3.svg" alt="img">
-											</div>
-											<div class="company__services-content">
-												<h4>Зразки з вами</h4>
-												<p>Ми показуємо зразки систем профілю та матеріалів для прикрас</p>
-											</div>
-										</div>
-										<div class="company__services-body">
-											<div class="company__services-image">
-												<img src="./img/icon/company-services-image-4.svg" alt="img">
-											</div>
-											<div class="company__services-content">
-												<h4>Ціна</h4>
-												<p>Зателефонуйте точній вартості замовлення на місці</p>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="company__body">
-							<div class="company__body-content" id="tab-3">
-								<div class="company__block-1">
-									<div class="company__logo">
-										<img src="img/icon/logo-big-3.jpg" alt="logo">
-									</div>
-									<div class="company__info">
-										<p>Ми пропонуємо нашим клієнтам допомогу у виборі оптимальних рішень, враховуючи свої вимоги щодо характеристик Windows та бюджету.Оскільки Windows є предметом довгострокового використання, ми надаємо велике значення для наших клієнтів, щоб зробити правильний вибір.</p>
-									</div>
-								</div>
-								<div class="company__video">
-									<video preload="metadata" controls autoplay muted class="company__video_item">
-										<source src="videos/company-vicna.webm" type="video/webm">
-										<source src="videos/company-vicna.mp4" type="video/mp4">
-									</video>
-								</div>
-							</div>
-						</div>
-						<div class="company__body">
-							<div class="company__body-content" id="tab-4">
-								<div class="company__services">
-									<div class="company__title title">
-										<h3>Як ми працюємо</h3>
-									</div>
-									<div class="company__services-wrap">
-										<div class="company__services-body">
-											<div class="company__services-image">
-												<img src="./img/icon/company-services-image-1.svg" alt="img">
-											</div>
-											<div class="company__services-content">
-												<h4>Ми прийдемо безкоштовно</h4>
-												<p>Ми вільно вирушаємо до всіх міст московського регіону</p>
-											</div>
-										</div>
-										<div class="company__services-body">
-											<div class="company__services-image">
-												<img src="./img/icon/company-services-image-2.svg" alt="img">
-											</div>
-											<div class="company__services-content">
-												<h4>Ми залишаємо щодня</h4>
-												<p>З 9 до 21 вихідних та свят</p>
-											</div>
-										</div>
-										<div class="company__services-body">
-											<div class="company__services-image">
-												<img src="./img/icon/company-services-image-3.svg" alt="img">
-											</div>
-											<div class="company__services-content">
-												<h4>Зразки з вами</h4>
-												<p>Ми показуємо зразки систем профілю та матеріалів для прикрас</p>
-											</div>
-										</div>
-										<div class="company__services-body">
-											<div class="company__services-image">
-												<img src="./img/icon/company-services-image-4.svg" alt="img">
-											</div>
-											<div class="company__services-content">
-												<h4>Ціна</h4>
-												<p>Зателефонуйте точній вартості замовлення на місці</p>
-											</div>
-										</div>
-									</div>
-								</div>
-						</div>
-						<div class="company__wrap">
-							<div class="company__inner-1 company__flex">
-								<div class="company__image">
-									<img src="img/icon/company-icon1.svg" alt="icon">
-								</div>
-								<div class="company__desc">
-									<h5>Професіоналізм</h5>
-									<p>Бригада професійних майстрів для встановлення та обслуговування</p>
-								</div>
-							</div>
-							<div class="company__inner-2 company__flex">
-								<div class="company__image">
-									<img src="img/icon/company-icon2.svg" alt="icon">
-								</div>
-								<div class="company__desc">
-									<h5>Ціноутворення</h5>
-									<p>Найкращі ціни на ринку пластикових вікон</p>
-								</div>
-							</div>
-							<div class="company__inner-3 company__flex">
-								<div class="company__image">
-									<img src="img/icon/company-icon3.svg" alt="icon">
-								</div>
-								<div class="company__desc">
-									<h5>Мобільність</h5>
-									<p>Висновок Палати договору</p>
-								</div>
-							</div>
-							<div class="company__inner-4 company__flex">
-								<div class="company__image">
-									<img src="img/icon/company-icon4.svg" alt="icon">
-								</div>
-								<div class="company__desc">
-									<h5>Вірність</h5>
-									<p>99% клієнтів рекомендують нас своїм друзям</p>
-								</div>
-							</div>
-							<div class="company__inner-5 company__flex">
-								<div class="company__image">
-									<img src="img/icon/company-icon5.svg" alt="icon">
-								</div>
-								<div class="company__desc">
-									<h5>Швидкість</h5>
-									<p>Короткі умови продукції</p>
-								</div>
-							</div>
-							<div class="company__inner-6 company__flex">
-								<div class="company__image">
-									<img src="img/icon/company-icon6.svg" alt="icon">
-								</div>
-								<div class="company__desc">
-									<h5>Послуга якості</h5>
-									<p>Бездоганна якість та контроль продуктів ПВХ</p>
-								</div>
-							</div>
-						</div>
-						<div class="company__btn-inner">
-							<button class="company__button-orange btn">Подайте заявку на вимірювання</button>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="portfolio">
-				<div class="container">
-					<div class="portfolio__content">
-						<div class="portfolio__title title">
-							<h3>Портфоліо</h3>
-						</div>
-						<div class="portfolio__body">
-							<div class="portfolio__slaider">
-								<img src="img/icon/portfolio-img1.svg" alt="img">
-								<img src="img/icon/portfolio-img1.svg" alt="img">
-								<img src="img/icon/portfolio-img1.svg" alt="img">
-								<img src="img/icon/portfolio-img1.svg" alt="img">
-							</div>
-							<div class="portfolio__image-cards">
-								<iframe src="https://snazzymaps.com/embed/409862" width="100%" height="312px" style="border:none;"></iframe>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="question">
-				<div class="container">
-					<div class="question__content">
-						<div class="question__title title">
-							<h3 id="question">Питання відповідь</h3>
-						</div>
-						<div class="question__body">
-							<div class="question__card">
-								<div class="question__card-item">
-									<h2 class="question__card-title">Скільки часу потрібно для виготовлення пластикових вікон?</h2>
-									<p class="question__card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-										Quidem officia officiis dignissimos assumenda illum, expedita delectus aspernatur in error
-										facilis magni! Asperiores, suscipit! Repellendus reprehenderit alias vero qui, maiores
-										sed, quos molestiae veritatis voluptatum magni, reiciendis ipsa dolores. Doloribus
-										corporis rerum nam nostrum qui neque itaque aspernatur adipisci perspiciatis laboriosam?
-									</p>
-								</div>
-							</div>
-							<div class="question__card">
-								<div class="question__card-item">
-									<h2 class="question__card-title">Які методи оплати?</h2>
-									<p class="question__card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-										Quidem officia officiis dignissimos assumenda illum, expedita delectus aspernatur in error
-										facilis magni! Asperiores, suscipit! Repellendus reprehenderit alias vero qui, maiores
-										sed, quos molestiae veritatis voluptatum magni, reiciendis ipsa dolores. Doloribus
-										corporis rerum nam nostrum qui neque itaque aspernatur adipisci perspiciatis laboriosam?
-									</p>
-								</div>
-							</div>
-							<div class="question__card">
-								<div class="question__card-item">
-									<h2 class="question__card-title">Де я можу побачити зразки?</h2>
-									<p class="question__card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-										Quidem officia officiis dignissimos assumenda illum, expedita delectus aspernatur in error
-										facilis magni! Asperiores, suscipit! Repellendus reprehenderit alias vero qui, maiores
-										sed, quos molestiae veritatis voluptatum magni, reiciendis ipsa dolores. Doloribus
-										corporis rerum nam nostrum qui neque itaque aspernatur adipisci perspiciatis laboriosam?
-									</p>
-								</div>
-							</div>
-							<div class="question__card">
-								<div class="question__card-item">
-									<h2 class="question__card-title">Навіщо називати вимірювача?Я можу дати розміри</h2>
-									<p class="question__card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-										Quidem officia officiis dignissimos assumenda illum, expedita delectus aspernatur in error
-										facilis magni! Asperiores, suscipit! Repellendus reprehenderit alias vero qui, maiores
-										sed, quos molestiae veritatis voluptatum magni, reiciendis ipsa dolores. Doloribus
-										corporis rerum nam nostrum qui neque itaque aspernatur adipisci perspiciatis laboriosam?
-									</p>
-								</div>
-							</div>
-							<div class="question__card">
-								<div class="question__card-item">
-									<h2 class="question__card-title">Я хотів би закінчити балкон.Ви допоможете?</h2>
-									<p class="question__card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-										Quidem officia officiis dignissimos assumenda illum, expedita delectus aspernatur in error
-										facilis magni! Asperiores, suscipit! Repellendus reprehenderit alias vero qui, maiores
-										sed, quos molestiae veritatis voluptatum magni, reiciendis ipsa dolores. Doloribus
-										corporis rerum nam nostrum qui neque itaque aspernatur adipisci perspiciatis laboriosam?
-									</p>
-								</div>
-							</div>
-							<div class="question__card">
-								<div class="question__card-item">
-									<h2 class="question__card-title">Чи потрібно мені найняти вантажників для підйому?</h2>
-									<p class="question__card-text">Ні, команда самих майстрів ретельно доставить і принесе його.</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="contacts">
-				<div class="container">
-					<div class="contacts__title title">
-						<h3 id="contacts">Контакти</h3>
-					</div>
-					<div class="contacts__content">
-						<div class="contacts__body">
-							<div class="contacts__contact">
-								<div class="contacts__tel">
-									<p>Безкоштовна консультація:</p>
-									<a href="tel:+8 (4932) 34-31 40">+8 (4932) 34-31-40</a>
-									<a href="tel:+8 (905) 109-31-40">+8 (905) 109-31-40</a>
-								</div>
-								<div class="contacts__location">
-									<p>г. Іваново, ул. Генерала Хлебнікова, д.54, оф.303</p>
-									<a href="mailto: okna@haus.ua">okna@haus.ua</a>
-								</div>
-							</div>
-							<div class="contacts__info">
-								<p>Установку повинні проводити лише експерти.Сотні сімей довіряють нам.Дізнайтеся більше, в якому рішення підходять для вас.Ви можете придбати недорогі товари з гарантованим високим якість.</p>
-							</div>
-							<div class="contacts__image">
-								<a href="#!"><img src="img/icon/contacts-img6.svg" alt="img"></a>
-								<a href="#!"><img src="img/icon/contacts-img5.svg" alt="img"></a>
-								<a href="#!"><img src="img/icon/contacts-img4.svg" alt="img"></a>
-								<a href="#!"><img src="img/icon/contacts-img3.svg" alt="img"></a>
-								<a href="#!"><img src="img/icon/contacts-img2.svg" alt="img"></a>
-							</div>
-						</div>
-						<div class="contacts__request">
-							<form action="#" method="post" class="contacts__form form">
-								<label for="1" class="form__title">Залишилися питання?</label>
-								<input type="text" name="name" id="1" placeholder="Представьтесь, пожалуйста"
-									class="form__name form__general contacts__form-name">
-								<input type="email" name="email" id="2" placeholder="E-mail"
-									class="form__email form__general contacts__form-email">
-								<textarea type="text" name="textarea" id="3" placeholder="Ваш отзыв"
-									class="form__area form__general"></textarea>
-								<div class="form__box">
-									<input type="checkbox" name="checkbox" class="form__checkbox contacts__checkbox"><label class="form__chec-title"> Я погоджуюся (далі) щодо обробки <a href="#">особистих данів</a></label>
-								</div>
-								<div class="contacts__box-btn">
-									<button class="contacts__button-blue btn">Додаток для замерзання</button>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</section>
-		</main>
-		<footer class="footer">
-			<div class="container">
-				<div class="footer__content">
-					<div class="footer__body">
-						<div class="footer__logo">
-							<a href="#"><img src="img/icon/footer-logo.svg" alt="img"></a>
-							<p>© ООО Вікна Хаус”, 2011 - 2022</p>
-						</div>
-					</div>
-					<div class="footer__custom">
-						<a href="">Політика конфіденційності</a>
-						<a href="">Користувацька угода</a>
-					</div>
-				</div>
-			</div>
-		</footer>
-	</div>
-</body>
+                  <fieldset class="calc__group">
+                    <legend data-i18n class="calc__label">Розміри, мм</legend>
+                    <div class="calc__sizes">
+                      <div class="calc__size">
+                        <label data-i18n class="calc__size-label" for="calc-width">Ширина</label>
+                        <input
+                          class="calc__input"
+                          type="number"
+                          id="calc-width"
+                          name="width"
+                          min="400"
+                          max="3000"
+                          step="10"
+                          value="1300"
+                        />
+                        <input
+                          data-i18n-attr="aria-label"
+                          class="calc__range"
+                          type="range"
+                          name="width-range"
+                          min="400"
+                          max="3000"
+                          step="10"
+                          value="1300"
+                          aria-label="Ширина"
+                        />
+                      </div>
+                      <div class="calc__size">
+                        <label data-i18n class="calc__size-label" for="calc-height">Висота</label>
+                        <input
+                          class="calc__input"
+                          type="number"
+                          id="calc-height"
+                          name="height"
+                          min="400"
+                          max="2500"
+                          step="10"
+                          value="1400"
+                        />
+                        <input
+                          data-i18n-attr="aria-label"
+                          class="calc__range"
+                          type="range"
+                          name="height-range"
+                          min="400"
+                          max="2500"
+                          step="10"
+                          value="1400"
+                          aria-label="Висота"
+                        />
+                      </div>
+                    </div>
+                  </fieldset>
+
+                  <fieldset class="calc__group">
+                    <legend data-i18n class="calc__label">Профіль</legend>
+                    <div class="calc__options">
+                      <label class="calc__option"
+                        ><input type="radio" name="profile" value="standard" checked /><span data-i18n>Стандартний</span></label
+                      >
+                      <label class="calc__option"
+                        ><input type="radio" name="profile" value="business" /><span data-i18n>Бізнес</span></label
+                      >
+                      <label class="calc__option"
+                        ><input type="radio" name="profile" value="premium" /><span data-i18n>Преміум</span></label
+                      >
+                      <label class="calc__option"
+                        ><input type="radio" name="profile" value="exclusive" /><span data-i18n>Ексклюзивний</span></label
+                      >
+                    </div>
+                  </fieldset>
+
+                  <fieldset class="calc__group">
+                    <legend data-i18n class="calc__label">Склопакет</legend>
+                    <div class="calc__options">
+                      <label class="calc__option"
+                        ><input type="radio" name="glass" value="single" /><span data-i18n>Однокамерний</span></label
+                      >
+                      <label class="calc__option"
+                        ><input type="radio" name="glass" value="double" checked /><span data-i18n>Двокамерний</span></label
+                      >
+                      <label class="calc__option"
+                        ><input type="radio" name="glass" value="energy" /><span data-i18n>Енергозберігаючий</span></label
+                      >
+                    </div>
+                  </fieldset>
+
+                  <fieldset class="calc__group">
+                    <legend data-i18n class="calc__label">Стулки, що відчиняються</legend>
+                    <div class="calc__options" data-calc-opening></div>
+                  </fieldset>
+
+                  <fieldset class="calc__group">
+                    <legend data-i18n class="calc__label">Додатково</legend>
+                    <div class="calc__extras">
+                      <label class="calc__check"
+                        ><input type="checkbox" name="extras" value="sill" checked /><span data-i18n>Підвіконня</span></label
+                      >
+                      <label class="calc__check"
+                        ><input type="checkbox" name="extras" value="drain" checked /><span data-i18n>Відлив</span></label
+                      >
+                      <label class="calc__check"
+                        ><input type="checkbox" name="extras" value="net" /><span data-i18n>Москітна сітка</span></label
+                      >
+                      <label class="calc__check"
+                        ><input type="checkbox" name="extras" value="slopes" /><span data-i18n>Укоси</span></label
+                      >
+                      <label class="calc__check"
+                        ><input type="checkbox" name="extras" value="install" checked /><span data-i18n>Монтаж</span></label
+                      >
+                    </div>
+                  </fieldset>
+
+                  <fieldset class="calc__group">
+                    <legend data-i18n class="calc__label">Кількість вікон</legend>
+                    <div class="calc__counter">
+                      <button
+                        data-i18n-attr="aria-label"
+                        class="calc__counter-btn"
+                        type="button"
+                        data-calc-step="-1"
+                        aria-label="Менше"
+                      >
+                        −
+                      </button>
+                      <input
+                        data-i18n-attr="aria-label"
+                        class="calc__input calc__counter-value"
+                        type="number"
+                        name="count"
+                        min="1"
+                        max="50"
+                        value="1"
+                        aria-label="Кількість вікон"
+                      />
+                      <button
+                        data-i18n-attr="aria-label"
+                        class="calc__counter-btn"
+                        type="button"
+                        data-calc-step="1"
+                        aria-label="Більше"
+                      >
+                        +
+                      </button>
+                    </div>
+                  </fieldset>
+                </div>
+
+                <aside class="calc__summary">
+                  <div class="calc__preview" aria-hidden="true">
+                    <div class="calc__frame" data-calc-frame></div>
+                  </div>
+                  <p class="calc__preview-size" data-calc-size></p>
+                <ul class="calc__legend" data-calc-legend></ul>
+                  <ul class="calc__breakdown" data-calc-breakdown></ul>
+                  <div class="calc__total">
+                    <span data-i18n>Орієнтовна вартість</span>
+                    <output class="calc__total-value" data-calc-total aria-live="polite"></output>
+                  </div>
+                  <button data-i18n class="calc__button-orange btn" type="button" data-calc-order>Заявка на замір</button>
+                  <p data-i18n class="calc__note">Ціни орієнтовні та не є публічною офертою</p>
+                </aside>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

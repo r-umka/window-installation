@@ -1,0 +1,39 @@
+// Перемикач мов у шапці (UA / EN)
+.lang {
+	display: flex;
+	flex-shrink: 0;
+	gap: 2px;
+	margin-left: 10px;
+	padding: 2px;
+	border-radius: 3px;
+	background: $color-white;
+
+	&__btn {
+		padding: 6px 8px;
+		border-radius: 3px;
+		color: $color-primary;
+		font-size: 13px;
+		font-weight: 700;
+		transition: background-color .3s, color .3s;
+
+		&:hover {
+			color: $color-accent;
+		}
+
+		&[aria-pressed="true"] {
+			background: $color-accent;
+			color: $color-white;
+		}
+
+		&:focus-visible {
+			outline: 2px solid $color-primary;
+			outline-offset: 1px;
+		}
+	}
+
+	// У мобільній шапці бургер стоїть останнім (order: 1), перемикач — перед кнопками
+	@media (max-width: 895px) {
+		margin-left: auto;
+		margin-right: 10px;
+	}
+}
