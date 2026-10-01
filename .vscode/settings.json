@@ -1,0 +1,10 @@
+{
+  // Live Sass Compiler: у цьому проєкті CSS лежить у styles/css (глобально стоїть /css)
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": "/styles/css"
+    }
+  ]
+}
